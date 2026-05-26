@@ -46,7 +46,7 @@
           <span class="field-error" id="requestTypeError">Selecciona el tipo de solicitud.</span>
         </div>
 
-        <div class="field">
+        <div class="field" id="pizzaChoiceField">
           <label for="pizzaChoice">Pizza preferida <span class="required" aria-hidden="true">*</span></label>
           <select id="pizzaChoice" name="pizzaChoice" required aria-describedby="pizzaChoiceError">
             <option value="">Selecciona una pizza</option>
@@ -55,6 +55,13 @@
             <option>Huerta Mediterránea</option>
           </select>
           <span class="field-error" id="pizzaChoiceError">Selecciona una pizza.</span>
+        </div>
+
+        <div class="field full" id="selectedPizzasField" style="display: none;">
+          <label>Pizzas seleccionadas en tu pedido</label>
+          <div id="selectedPizzasList" style="padding: 0.8rem 1.1rem; border: 2px solid var(--color-border); border-radius: .57rem; background: var(--color-surface-soft); display: flex; flex-direction: column; gap: .4rem;">
+            <!-- Se carga dinámicamente desde el JS del carrito -->
+          </div>
         </div>
 
         <div class="field">

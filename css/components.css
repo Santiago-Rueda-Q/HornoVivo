@@ -360,8 +360,11 @@ html[data-theme="dark"] .form-alert {
 }
 .form-alert.visible { display: block; }
 
+.order-summary-container {
+  margin-block-start: 1rem;
+}
 .order-summary {
-  margin-block: 1rem 1.3rem;
+  margin-block: 0 1.3rem;
   padding: .78rem 1rem;
   border: 2px solid var(--color-border);
   border-radius: .72rem;
@@ -370,6 +373,36 @@ html[data-theme="dark"] .form-alert {
 }
 .order-summary output { color: var(--color-primary-hover); }
 html[data-theme="dark"] .order-summary output { color: var(--color-primary); }
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem .8rem;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: .5rem;
+}
+.cart-item-info {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 740;
+}
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+.cart-item-actions .icon-button {
+  min-inline-size: 2rem;
+  min-block-size: 2rem;
+}
 
 /* Acordeones */
 .accordion {

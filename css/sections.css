@@ -8,7 +8,11 @@
   color: #ffffff;
   font-size: calc(.96rem * var(--font-scale, 1));
 }
-html[data-theme="dark"] .topbar { background: #090605; }
+
+html[data-theme="dark"] .topbar {
+  background: #090605;
+}
+
 .topbar .container {
   min-block-size: 3.1rem;
   display: flex;
@@ -18,7 +22,19 @@ html[data-theme="dark"] .topbar { background: #090605; }
   flex-wrap: wrap;
   padding-block: .5rem;
 }
-.topbar a { color: #ffffff; }
+
+.topbar a {
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.topbar .svg-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
 
 /* Cabecera Principal */
 header {
