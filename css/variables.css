@@ -1,0 +1,54 @@
+/* ============================================================
+   SISTEMA DE DISEÑO ACCESIBLE — VARIABLES Y TEMAS
+   ============================================================ */
+:root {
+  --color-primary: #8b1e12;
+  --color-primary-hover: #6b1510;
+  --color-secondary: #38451b;
+  --color-secondary-hover: #273313;
+  --color-bg: #fff8ee;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f9edda;
+  --color-accent: #f2c14e;
+  --color-accent-soft: #ffe6ad;
+  --color-text: #21120c;
+  --color-text-secondary: #38451b;
+  --color-success: #235017;
+  --color-warning: #664200;
+  --color-error: #7d1712;
+  --color-info: #153f57;
+  --color-border: #a58d75;
+  --color-focus: #005fcc;
+  --shadow: 0 14px 36px rgba(59, 29, 18, .12);
+  --radius-sm: .65rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.6rem;
+  --max-width: 75rem;
+  --font-body: Arial, "Segoe UI", system-ui, sans-serif;
+  --font-size-base: 1rem;
+  --line-height: 1.65;
+  --letter-spacing: normal;
+  --word-spacing: normal;
+  --motion: 220ms;
+}
+
+html[data-theme="dark"] {
+  --color-primary: #ffd9be;
+  --color-primary-hover: #fff1e7;
+  --color-secondary: #dff3bd;
+  --color-secondary-hover: #efffd5;
+  --color-bg: #17100c;
+  --color-surface: #251914;
+  --color-surface-soft: #302119;
+  --color-accent: #ffd46c;
+  --color-accent-soft: #493416;
+  --color-text: #fffaf5;
+  --color-text-secondary: #f3e8df;
+  --color-success: #cff5c0;
+  --color-warning: #ffe19d;
+  --color-error: #ffd5ce;
+  --color-info: #d5efff;
+  --color-border: #907864;
+  --color-focus: #ffd046;
+  --shadow: 0 14px 36px rgba(0, 0, 0, .38);
+}

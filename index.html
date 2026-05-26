@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es" data-theme="light">
 <head>
@@ -8,1931 +7,704 @@
   <meta name="theme-color" content="#8b1e12">
   <title>Horno Vivo | Pizzería artesanal accesible</title>
 
-  <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9FmwMkakS-TCGT8h8Bl9CClLY1JPirLjuB-sRAznIPZKDAaCBDwzT0QWXf0Peijhn3TtGtQ7QWZHaptSppz9Vv5i6-urY52j70Bdfc-IHTTPEKDHM5Gd29N1om0trmpKYDw_0nl_Tpgs8k8UnI90Gp-ukTgLUtnAgfwOEhWYzgRXl36SLXiNgRctlGyf8DcJmruK4gCtXz4gGCkYFMEmfvseqppuWWLx_c-L64BZ-_ISUibiKuJGSfHOvMdn3ltqj83NWJzP5d47BKq8wuVBy9XRqmR8G5DvaZhgHSUuIAz82E3uwccqqtQXayTeyuhNWcPdLMl6JjjUyZxthT1ayQau4Y8Ne35zwW1lykr1IlaFQ-7suCnKHO6P2spYKITHJI-LLYHukSNKDJYYoF6OlHpS-iTiwGEJijZ2xDKHM--4Rp_nPD07WFFDePwiCqNWjzd7gEKb3nnbhJXJKx2banH9XaYjwiF0BCwGh-KULsH9RncIKynfor9EOSOrlepR9r7ruVKPIh3-onPfeZL8PjBd7nTZkVLiLpOl2SqKTD4" charset="UTF-8"></script><style>
-    /* ============================================================
-       SISTEMA DE DISEÑO ACCESIBLE — HORNO VIVO PIZZERÍA
-       Paleta cálida: terracota, crema, oliva y carbón.
-       Texto y acciones principales con contraste reforzado >= 8.5:1.
-       ============================================================ */
-    :root {
-      --color-primary: #8b1e12;
-      --color-primary-hover: #6b1510;
-      --color-secondary: #38451b;
-      --color-secondary-hover: #273313;
-      --color-bg: #fff8ee;
-      --color-surface: #ffffff;
-      --color-surface-soft: #f9edda;
-      --color-accent: #f2c14e;
-      --color-accent-soft: #ffe6ad;
-      --color-text: #21120c;
-      --color-text-secondary: #38451b;
-      --color-success: #235017;
-      --color-warning: #664200;
-      --color-error: #7d1712;
-      --color-info: #153f57;
-      --color-border: #a58d75;
-      --color-focus: #005fcc;
-      --shadow: 0 14px 36px rgba(59, 29, 18, .12);
-      --radius-sm: .65rem;
-      --radius-md: 1rem;
-      --radius-lg: 1.6rem;
-      --max-width: 75rem;
-      --font-body: Arial, "Segoe UI", system-ui, sans-serif;
-      --font-size-base: 1rem;
-      --line-height: 1.65;
-      --letter-spacing: normal;
-      --word-spacing: normal;
-      --motion: 220ms;
-    }
-
-    html[data-theme="dark"] {
-      --color-primary: #ffd9be;
-      --color-primary-hover: #fff1e7;
-      --color-secondary: #dff3bd;
-      --color-secondary-hover: #efffd5;
-      --color-bg: #17100c;
-      --color-surface: #251914;
-      --color-surface-soft: #302119;
-      --color-accent: #ffd46c;
-      --color-accent-soft: #493416;
-      --color-text: #fffaf5;
-      --color-text-secondary: #f3e8df;
-      --color-success: #cff5c0;
-      --color-warning: #ffe19d;
-      --color-error: #ffd5ce;
-      --color-info: #d5efff;
-      --color-border: #907864;
-      --color-focus: #ffd046;
-      --shadow: 0 14px 36px rgba(0, 0, 0, .38);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html {
-      font-size: var(--font-size-base);
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      min-width: 18rem;
-      background: var(--color-bg);
-      color: var(--color-text);
-      font-family: var(--font-body);
-      font-size: clamp(1rem, .98rem + .15vw, 1.075rem);
-      line-height: var(--line-height);
-      letter-spacing: var(--letter-spacing);
-      word-spacing: var(--word-spacing);
-    }
-
-    body.pause-motion *,
-    body.pause-motion *::before,
-    body.pause-motion *::after {
-      animation: none !important;
-      transition: none !important;
-      scroll-behavior: auto !important;
-    }
-
-    body.grayscale { filter: grayscale(100%); }
-    body.hide-images .visual-image { display: none !important; }
-    body.readable-font { font-family: "Trebuchet MS", Verdana, Arial, sans-serif; }
-    body.wide-spacing {
-      --line-height: 1.95;
-      --letter-spacing: .06em;
-      --word-spacing: .17em;
-    }
-    body.big-cursor,
-    body.big-cursor * {
-      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'%3E%3Cpath fill='%2321120c' stroke='%23ffffff' stroke-width='2' d='M3 2l28 23-13 1 8 13-7 3-7-14-9 10z'/%3E%3C/svg%3E") 3 2, auto !important;
-    }
-    body.focus-strong *:focus-visible {
-      outline-width: 5px;
-      outline-offset: 4px;
-    }
-    body.high-contrast {
-      --color-bg: #ffffff;
-      --color-surface: #ffffff;
-      --color-surface-soft: #ffffff;
-      --color-accent-soft: #fff2a1;
-      --color-text: #000000;
-      --color-text-secondary: #000000;
-      --color-primary: #000000;
-      --color-primary-hover: #202020;
-      --color-secondary: #000000;
-      --color-border: #000000;
-      --color-focus: #005fcc;
-      --shadow: none;
-    }
-    html[data-theme="dark"] body.high-contrast {
-      --color-bg: #000000;
-      --color-surface: #000000;
-      --color-surface-soft: #000000;
-      --color-text: #ffffff;
-      --color-text-secondary: #ffffff;
-      --color-primary: #ffffff;
-      --color-primary-hover: #ececec;
-      --color-secondary: #ffffff;
-      --color-border: #ffffff;
-      --color-focus: #ffd046;
-    }
-
-    a {
-      color: var(--color-primary-hover);
-      text-underline-offset: .2em;
-      text-decoration-thickness: .13em;
-    }
-    html[data-theme="dark"] a { color: var(--color-primary); }
-    a:hover { text-decoration-thickness: .19em; }
-
-    :where(a, button, input, select, textarea, summary):focus-visible {
-      outline: 3px solid var(--color-focus);
-      outline-offset: 3px;
-      border-radius: .25rem;
-    }
-
-    img, svg { max-width: 100%; height: auto; }
-    button, input, select, textarea { font: inherit; }
-    button { cursor: pointer; }
-    p { max-width: 68ch; }
-    h1, h2, h3 { line-height: 1.13; text-wrap: balance; }
-    h1 {
-      font-size: clamp(2.35rem, 6vw, 4.8rem);
-      letter-spacing: -.045em;
-      margin: 0 0 1rem;
-    }
-    h2 {
-      font-size: clamp(1.7rem, 3.6vw, 2.75rem);
-      letter-spacing: -.028em;
-      margin: 0 0 .75rem;
-    }
-    h3 { font-size: clamp(1.16rem, 2vw, 1.36rem); }
-
-    .container {
-      inline-size: min(100% - 2rem, var(--max-width));
-      margin-inline: auto;
-    }
-
-    .skip-link {
-      position: absolute;
-      z-index: 10000;
-      inset-block-start: .5rem;
-      inset-inline-start: .5rem;
-      transform: translateY(-180%);
-      background: var(--color-focus);
-      color: #ffffff;
-      font-weight: 800;
-      padding: .8rem 1rem;
-      border-radius: var(--radius-sm);
-    }
-    .skip-link:focus { transform: translateY(0); }
-
-    .sr-only {
-      position: absolute !important;
-      inline-size: 1px !important;
-      block-size: 1px !important;
-      padding: 0 !important;
-      margin: -1px !important;
-      overflow: hidden !important;
-      clip-path: inset(50%) !important;
-      white-space: nowrap !important;
-      border: 0 !important;
-    }
-
-    .svg-icon {
-      inline-size: 1.4rem;
-      block-size: 1.4rem;
-      flex: 0 0 auto;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .topbar {
-      background: var(--color-secondary);
-      color: #ffffff;
-      font-size: .96rem;
-    }
-    html[data-theme="dark"] .topbar { background: #090605; }
-    .topbar .container {
-      min-block-size: 3.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .75rem 1.5rem;
-      flex-wrap: wrap;
-      padding-block: .5rem;
-    }
-    .topbar a { color: #ffffff; }
-
-    header {
-      position: sticky;
-      inset-block-start: 0;
-      z-index: 50;
-      background: var(--color-surface);
-      border-bottom: 1px solid var(--color-border);
-    }
-    .nav-wrap {
-      min-block-size: 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .72rem;
-      color: var(--color-text);
-      text-decoration: none;
-      font-size: clamp(1.12rem, 2vw, 1.33rem);
-      font-weight: 800;
-    }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      inline-size: 2.9rem;
-      block-size: 2.9rem;
-      background: var(--color-primary);
-      color: #ffffff;
-      border-radius: .85rem;
-    }
-    html[data-theme="dark"] .brand-mark { color: #21120c; }
-    .brand-mark .svg-icon { inline-size: 1.75rem; block-size: 1.75rem; }
-
-    .menu-toggle {
-      min-inline-size: 3rem;
-      min-block-size: 3rem;
-      display: inline-grid;
-      place-items: center;
-      border: 2px solid var(--color-border);
-      background: var(--color-surface);
-      color: var(--color-text);
-      border-radius: .75rem;
-    }
-    .menu-toggle .svg-icon { inline-size: 1.65rem; block-size: 1.65rem; }
-
-    .primary-nav {
-      display: none;
-      position: absolute;
-      inset: calc(100% + 1px) 0 auto;
-      background: var(--color-surface);
-      padding: .75rem 1rem 1rem;
-      border-bottom: 1px solid var(--color-border);
-      box-shadow: var(--shadow);
-    }
-    .primary-nav.open { display: block; }
-    .primary-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: .35rem;
-    }
-    .primary-nav a,
-    .nav-dropdown > button {
-      min-block-size: 3rem;
-      display: flex;
-      align-items: center;
-      gap: .38rem;
-      padding: .55rem .82rem;
-      color: var(--color-text);
-      border-radius: .55rem;
-      text-decoration: none;
-      background: transparent;
-      border: 0;
-      font-weight: 750;
-    }
-    .primary-nav a:hover,
-    .nav-dropdown > button:hover {
-      background: var(--color-surface-soft);
-    }
-    .nav-dropdown { position: relative; }
-    .dropdown-panel {
-      display: none;
-      padding: .36rem;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: .72rem;
-    }
-    .dropdown-panel.open { display: block; }
-    .nav-cta {
-      background: var(--color-primary) !important;
-      color: #ffffff !important;
-      justify-content: center;
-    }
-    html[data-theme="dark"] .nav-cta { color: #21120c !important; }
-
-    @media (min-width: 57rem) {
-      .menu-toggle { display: none; }
-      .primary-nav {
-        display: block !important;
-        position: static;
-        padding: 0;
-        box-shadow: none;
-        border: 0;
-      }
-      .primary-nav ul {
-        flex-direction: row;
-        align-items: center;
-      }
-      .dropdown-panel {
-        position: absolute;
-        min-inline-size: 15.5rem;
-        inset-block-start: calc(100% + .45rem);
-        inset-inline-start: 0;
-        box-shadow: var(--shadow);
-      }
-    }
-
-    .breadcrumbs {
-      padding-block: 1rem .25rem;
-      font-size: .95rem;
-    }
-    .breadcrumbs ol {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0;
-      margin: 0;
-      gap: .4rem;
-    }
-    .breadcrumbs li:not(:last-child)::after {
-      content: "/";
-      padding-inline-start: .42rem;
-      color: var(--color-text-secondary);
-    }
-
-    .hero {
-      padding-block: clamp(2.5rem, 8vw, 5.5rem);
-      overflow: hidden;
-    }
-    .hero-grid {
-      display: grid;
-      align-items: center;
-      gap: clamp(2rem, 5vw, 4rem);
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .45rem;
-      color: var(--color-text);
-      background: var(--color-accent-soft);
-      font-weight: 750;
-      border-radius: 999px;
-      padding: .38rem .82rem;
-      margin-block-end: 1rem;
-    }
-    .lead {
-      font-size: clamp(1.08rem, 2vw, 1.24rem);
-      color: var(--color-text-secondary);
-      margin-block-end: 1.8rem;
-    }
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .8rem;
-    }
-    .btn {
-      min-block-size: 3.18rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem;
-      padding: .76rem 1.17rem;
-      border-radius: .8rem;
-      border: 2px solid var(--color-primary);
-      font-weight: 780;
-      text-decoration: none;
-      transition: background var(--motion), transform var(--motion);
-    }
-    .btn-primary {
-      color: #ffffff;
-      background: var(--color-primary);
-    }
-    .btn-primary:hover {
-      color: #ffffff;
-      background: var(--color-primary-hover);
-    }
-    html[data-theme="dark"] .btn-primary,
-    html[data-theme="dark"] .btn-primary:hover { color: #21120c; }
-    .btn-secondary {
-      background: var(--color-surface);
-      color: var(--color-primary-hover);
-    }
-    html[data-theme="dark"] .btn-secondary { color: var(--color-primary); }
-    .btn-secondary:hover { background: var(--color-surface-soft); }
-
-    .trust-list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: .62rem;
-      padding: 0;
-      margin: 1.55rem 0 0;
-    }
-    .trust-list li {
-      display: inline-flex;
-      align-items: center;
-      gap: .38rem;
-      border: 1px solid var(--color-border);
-      background: var(--color-surface);
-      border-radius: 999px;
-      padding: .38rem .72rem;
-      font-size: .94rem;
-      font-weight: 700;
-    }
-    .trust-list .svg-icon { inline-size: 1.05rem; block-size: 1.05rem; color: var(--color-success); }
-
-    .hero-visual {
-      position: relative;
-      background: var(--color-surface);
-      padding: clamp(.7rem, 2vw, 1.1rem);
-      border: 1px solid var(--color-border);
-      border-radius: calc(var(--radius-lg) + .35rem);
-      box-shadow: var(--shadow);
-    }
-    .hero-badge {
-      position: absolute;
-      inset-block-end: 1.2rem;
-      inset-inline-start: 1.2rem;
-      max-inline-size: 12rem;
-      border-radius: .8rem;
-      background: var(--color-surface);
-      color: var(--color-text);
-      box-shadow: var(--shadow);
-      padding: .62rem .78rem;
-      font-size: .92rem;
-      font-weight: 750;
-    }
-    .hero-badge strong {
-      display: block;
-      font-size: 1.08rem;
-      color: var(--color-primary-hover);
-    }
-    html[data-theme="dark"] .hero-badge strong { color: var(--color-primary); }
-
-    @media (min-width: 50rem) {
-      .hero-grid { grid-template-columns: 1fr .98fr; }
-    }
-
-    section { padding-block: clamp(2.9rem, 7vw, 5.25rem); }
-    .section-alt { background: var(--color-surface-soft); }
-    .section-heading { margin-block-end: clamp(1.45rem, 3vw, 2.25rem); }
-    .section-heading p {
-      margin: .35rem 0 0;
-      color: var(--color-text-secondary);
-      font-size: 1.08rem;
-    }
-
-    .menu-cards {
-      display: grid;
-      gap: 1rem;
-    }
-    .pizza-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-    }
-    .pizza-image {
-      background: var(--color-accent-soft);
-      padding: .8rem;
-      min-block-size: 13rem;
-      display: grid;
-      place-items: center;
-    }
-    .pizza-card-content {
-      display: flex;
-      flex-direction: column;
-      gap: .55rem;
-      flex: 1;
-      padding: 1.1rem 1.15rem 1.2rem;
-    }
-    .pizza-card h3 { margin: 0; }
-    .pizza-card p {
-      margin: 0;
-      color: var(--color-text-secondary);
-      flex: 1;
-    }
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: .7rem;
-      margin-block-start: .6rem;
-    }
-    .price {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--color-primary-hover);
-    }
-    html[data-theme="dark"] .price { color: var(--color-primary); }
-    .mini-button {
-      min-block-size: 2.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: .35rem;
-      border: 2px solid var(--color-primary);
-      border-radius: .65rem;
-      padding: .45rem .7rem;
-      background: var(--color-primary);
-      color: #ffffff;
-      font-weight: 750;
-    }
-    html[data-theme="dark"] .mini-button { color: #21120c; }
-
-    @media (min-width: 44rem) {
-      .menu-cards { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 68rem) {
-      .menu-cards { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .two-columns {
-      display: grid;
-      gap: clamp(1.6rem, 5vw, 3rem);
-      align-items: start;
-    }
-    @media (min-width: 56rem) {
-      .two-columns { grid-template-columns: .92fr 1.08fr; }
-    }
-
-    .feature-list {
-      list-style: none;
-      padding: 0;
-      margin: 1.3rem 0 0;
-      display: grid;
-      gap: .82rem;
-    }
-    .feature-list li {
-      display: flex;
-      gap: .75rem;
-      align-items: flex-start;
-    }
-    .feature-list .svg-icon {
-      flex: 0 0 auto;
-      color: var(--color-success);
-      margin-block-start: .18rem;
-    }
-
-    .gallery {
-      display: grid;
-      gap: .8rem;
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .gallery figure {
-      margin: 0;
-      padding: .65rem;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-    }
-    .gallery figure:first-child { grid-column: 1 / -1; }
-    .gallery figcaption {
-      color: var(--color-text-secondary);
-      font-size: .92rem;
-      font-weight: 700;
-      margin-block-start: .45rem;
-    }
-
-    .table-scroll {
-      overflow-x: auto;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      background: var(--color-surface);
-    }
-    table {
-      border-collapse: collapse;
-      inline-size: 100%;
-      min-inline-size: 42rem;
-    }
-    caption {
-      text-align: start;
-      padding: 1rem;
-      font-weight: 780;
-      font-size: 1.08rem;
-    }
-    th, td {
-      border-top: 1px solid var(--color-border);
-      padding: .82rem .88rem;
-      text-align: start;
-    }
-    thead th {
-      background: var(--color-primary);
-      color: #ffffff;
-    }
-    html[data-theme="dark"] thead th { color: #21120c; }
-    tbody tr:nth-child(even) { background: var(--color-surface-soft); }
-
-    form {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      padding: clamp(1rem, 4vw, 2rem);
-    }
-    .fields {
-      display: grid;
-      gap: 1.1rem;
-    }
-    @media (min-width: 41rem) {
-      .fields { grid-template-columns: repeat(2, 1fr); }
-      .field.full { grid-column: 1 / -1; }
-    }
-    label {
-      display: block;
-      font-weight: 760;
-      margin-block-end: .36rem;
-    }
-    .required { color: var(--color-error); }
-
-    input:not([type="checkbox"]),
-    select,
-    textarea {
-      inline-size: 100%;
-      min-block-size: 3.16rem;
-      border: 2px solid var(--color-border);
-      background: var(--color-surface);
-      color: var(--color-text);
-      border-radius: .57rem;
-      padding: .68rem .76rem;
-    }
-    input[type="checkbox"] {
-      inline-size: 1.36rem;
-      block-size: 1.36rem;
-      min-block-size: 1.36rem;
-      vertical-align: middle;
-      margin-inline-end: .46rem;
-      accent-color: var(--color-primary);
-    }
-    textarea { min-block-size: 7rem; resize: vertical; }
-    input[aria-invalid="true"],
-    select[aria-invalid="true"],
-    textarea[aria-invalid="true"] { border-color: var(--color-error); }
-    .hint {
-      display: block;
-      font-size: .94rem;
-      margin-block-start: .28rem;
-      color: var(--color-text-secondary);
-    }
-    .field-error {
-      display: none;
-      color: var(--color-error);
-      font-weight: 740;
-      margin-block-start: .25rem;
-    }
-    .field-error.visible { display: block; }
-    .form-alert {
-      display: none;
-      background: #fff0ed;
-      border: 2px solid var(--color-error);
-      color: #4d0c08;
-      padding: .76rem 1rem;
-      border-radius: .67rem;
-      margin-block-end: 1.12rem;
-    }
-    html[data-theme="dark"] .form-alert {
-      background: #41120f;
-      color: #ffffff;
-    }
-    .form-alert.visible { display: block; }
-
-    .order-summary {
-      margin-block: 1rem 1.3rem;
-      padding: .78rem 1rem;
-      border: 2px solid var(--color-border);
-      border-radius: .72rem;
-      background: var(--color-surface);
-      font-weight: 760;
-    }
-    .order-summary output { color: var(--color-primary-hover); }
-    html[data-theme="dark"] .order-summary output { color: var(--color-primary); }
-
-    .accordion {
-      display: grid;
-      gap: .72rem;
-    }
-    .accordion-item {
-      border: 1px solid var(--color-border);
-      background: var(--color-surface);
-      border-radius: .76rem;
-      overflow: hidden;
-    }
-    .accordion-trigger {
-      inline-size: 100%;
-      min-block-size: 3.45rem;
-      border: 0;
-      background: transparent;
-      color: var(--color-text);
-      text-align: start;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .82rem;
-      font-weight: 760;
-      padding: .92rem 1rem;
-    }
-    .accordion-trigger .svg-icon {
-      transition: transform var(--motion);
-    }
-    .accordion-trigger[aria-expanded="true"] .svg-icon { transform: rotate(180deg); }
-    .accordion-panel {
-      padding: 0 1rem 1rem;
-      color: var(--color-text-secondary);
-    }
-    .accordion-panel[hidden] { display: none; }
-
-    .accessibility-statement {
-      border-inline-start: .42rem solid var(--color-primary);
-      padding: 1.18rem 1.22rem;
-      background: var(--color-surface);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    }
-
-    footer {
-      padding-block: 2.55rem;
-      background: var(--color-secondary);
-      color: #ffffff;
-    }
-    html[data-theme="dark"] footer { background: #090605; }
-    footer a { color: #ffffff; }
-    .footer-grid {
-      display: grid;
-      gap: 1.55rem;
-    }
-    .footer-grid ul {
-      list-style: none;
-      margin: .45rem 0 0;
-      padding: 0;
-    }
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-      font-weight: 800;
-      font-size: 1.2rem;
-    }
-    .footer-brand .svg-icon { inline-size: 1.7rem; block-size: 1.7rem; }
-    @media (min-width: 48rem) {
-      .footer-grid { grid-template-columns: 1.22fr 1fr 1fr; }
-    }
-
-    /* Widget complementario: la página funciona accesiblemente sin activarlo. */
-    .a11y-launcher {
-      position: fixed;
-      z-index: 900;
-      inset-inline-end: 1rem;
-      inset-block-end: 1rem;
-      inline-size: 3.7rem;
-      block-size: 3.7rem;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      border: 3px solid var(--color-focus);
-      background: var(--color-primary);
-      color: #ffffff;
-      box-shadow: var(--shadow);
-    }
-    html[data-theme="dark"] .a11y-launcher { color: #21120c; }
-    .a11y-launcher .svg-icon { inline-size: 1.9rem; block-size: 1.9rem; }
-    .a11y-panel {
-      position: fixed;
-      z-index: 1000;
-      inset-inline-end: 1rem;
-      inset-block-end: 5.4rem;
-      inline-size: min(24rem, calc(100vw - 2rem));
-      max-block-size: min(77vh, 42rem);
-      overflow-y: auto;
-      background: var(--color-surface);
-      border: 2px solid var(--color-border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow);
-      padding: 1rem;
-    }
-    .a11y-panel[hidden] { display: none; }
-    .a11y-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: .7rem;
-      margin-block-end: .75rem;
-    }
-    .a11y-header h2 {
-      font-size: 1.28rem;
-      margin: 0;
-    }
-    .icon-button {
-      min-inline-size: 2.78rem;
-      min-block-size: 2.78rem;
-      display: inline-grid;
-      place-items: center;
-      border: 2px solid var(--color-border);
-      border-radius: .52rem;
-      background: var(--color-surface);
-      color: var(--color-text);
-    }
-    .a11y-controls {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: .56rem;
-    }
-    .a11y-controls button {
-      min-block-size: 3.35rem;
-      border: 2px solid var(--color-border);
-      background: var(--color-surface);
-      color: var(--color-text);
-      border-radius: .57rem;
-      padding: .46rem;
-      font-size: .93rem;
-      font-weight: 730;
-    }
-    .a11y-controls button[aria-pressed="true"] {
-      background: var(--color-primary);
-      color: #ffffff;
-      border-color: var(--color-primary);
-    }
-    html[data-theme="dark"] .a11y-controls button[aria-pressed="true"] { color: #21120c; }
-    .profile-buttons {
-      display: grid;
-      gap: .46rem;
-      margin-block: .87rem;
-    }
-    .profile-buttons button {
-      min-block-size: 3rem;
-      text-align: start;
-      background: var(--color-surface-soft);
-      color: var(--color-text);
-      border: 2px solid var(--color-border);
-      border-radius: .57rem;
-      padding: .56rem .72rem;
-      font-weight: 730;
-    }
-    .text-size-row {
-      display: flex;
-      gap: .46rem;
-      margin-block-end: .82rem;
-    }
-    .text-size-row button {
-      flex: 1;
-      min-block-size: 3rem;
-      border: 2px solid var(--color-border);
-      border-radius: .57rem;
-      color: var(--color-text);
-      background: var(--color-surface);
-      font-weight: 760;
-    }
-    .reset-button {
-      inline-size: 100%;
-      min-block-size: 3rem;
-      margin-block-start: .77rem;
-      background: var(--color-primary);
-      border: 2px solid var(--color-primary);
-      border-radius: .57rem;
-      color: #ffffff;
-      font-weight: 760;
-    }
-    html[data-theme="dark"] .reset-button { color: #21120c; }
-
-    .reading-guide {
-      display: none;
-      position: fixed;
-      pointer-events: none;
-      z-index: 850;
-      inset-inline: 0;
-      block-size: .34rem;
-      background: var(--color-focus);
-      box-shadow: 0 0 0 2px #ffffff;
-    }
-    body.guide-enabled .reading-guide { display: block; }
-
-    dialog {
-      inline-size: min(36rem, calc(100% - 2rem));
-      color: var(--color-text);
-      background: var(--color-surface);
-      border: 2px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: 0;
-      box-shadow: var(--shadow);
-    }
-    dialog::backdrop { background: rgba(26, 13, 8, .76); }
-    .dialog-content { padding: clamp(1rem, 4vw, 1.65rem); }
-    .dialog-head {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: .72rem;
-    }
-    .dialog-head h2 { font-size: 1.58rem; }
-
-    .toast {
-      position: fixed;
-      z-index: 1200;
-      inset-inline-start: 50%;
-      transform: translateX(-50%);
-      inset-block-end: 1rem;
-      max-inline-size: calc(100% - 2rem);
-      padding: .82rem 1.02rem;
-      border-radius: .68rem;
-      background: var(--color-success);
-      color: #ffffff;
-      font-weight: 740;
-      box-shadow: var(--shadow);
-    }
-    html[data-theme="dark"] .toast { background: #153b0d; }
-    .toast[hidden] { display: none; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .001ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .001ms !important;
-      }
-    }
-
-    @media print {
-      header, .topbar, .a11y-launcher, .a11y-panel, .button-row,
-      .mini-button { display: none !important; }
-      body { background: #ffffff; color: #000000; }
-    }
-  </style>
+  <!-- Hoja de estilos unificada y modular -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <!-- Biblioteca SVG: iconos reutilizables sin emojis y sin archivos externos. -->
-  <svg class="sr-only" aria-hidden="true" focusable="false">
-    <symbol id="icon-pizza" viewBox="0 0 24 24">
-      <path d="M3 21L12 3l9 18H3Z"></path>
-      <path d="M6.4 15h11.2"></path>
-      <circle cx="12" cy="11" r="1.3"></circle>
-      <circle cx="9.5" cy="16.8" r="1.1"></circle>
-      <circle cx="15.5" cy="17" r="1.1"></circle>
-    </symbol>
-    <symbol id="icon-menu" viewBox="0 0 24 24">
-      <path d="M4 7h16M4 12h16M4 17h16"></path>
-    </symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24">
-      <path d="M6 6l12 12M18 6L6 18"></path>
-    </symbol>
-    <symbol id="icon-chevron" viewBox="0 0 24 24">
-      <path d="m6 9 6 6 6-6"></path>
-    </symbol>
-    <symbol id="icon-check" viewBox="0 0 24 24">
-      <path d="M20 6 9 17l-5-5"></path>
-    </symbol>
-    <symbol id="icon-cart" viewBox="0 0 24 24">
-      <path d="M3 4h2l2.5 11h10.5l2-8H7"></path>
-      <circle cx="9" cy="20" r="1"></circle>
-      <circle cx="17" cy="20" r="1"></circle>
-    </symbol>
-    <symbol id="icon-calendar" viewBox="0 0 24 24">
-      <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-      <path d="M8 3v4M16 3v4M3 10h18"></path>
-    </symbol>
-    <symbol id="icon-accessibility" viewBox="0 0 24 24">
-      <circle cx="12" cy="4.5" r="2"></circle>
-      <path d="M4 8.5h16M12 8.5v5M8 21l4-7 4 7M7 8.5l2 5M17 8.5l-2 5"></path>
-    </symbol>
-    <symbol id="icon-phone" viewBox="0 0 24 24">
-      <path d="M5 4h4l2 5-2.5 2a14 14 0 0 0 4.5 4.5L15 13l5 2v4c-9 2-17-6-15-15Z"></path>
-    </symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24">
-      <path d="M20 4C9 4 4 9 4 20 15 20 20 15 20 4Z"></path>
-      <path d="M4 20 15 9"></path>
-    </symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24">
-      <path d="M12 22c5 0 8-3.5 8-8 0-5-4-7-5-11-4 2-5 6-5 8-2-1-3-3-3-4-2 2-3 5-3 8 0 4 3 7 8 7Z"></path>
-      <path d="M12 22c2 0 3.5-1.5 3.5-3.5 0-2-1.5-3.1-2.5-4.5-2 1-3 2.8-3 4.5 0 2 1 3.5 2 3.5Z"></path>
-    </symbol>
-  </svg>
+<svg class="sr-only" aria-hidden="true" focusable="false">
+  <symbol id="icon-pizza" viewBox="0 0 24 24">
+    <path d="M3 5c6-2 12-2 18 0L12 21L3 5Z"></path>
+    <circle cx="12" cy="9" r="1.5"></circle>
+    <circle cx="8.5" cy="13" r="1.2"></circle>
+    <circle cx="15.5" cy="13" r="1.2"></circle>
+    <circle cx="12" cy="16.5" r="1"></circle>
+  </symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"></path>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24">
+    <path d="M6 6l12 12M18 6L6 18"></path>
+  </symbol>
+  <symbol id="icon-chevron" viewBox="0 0 24 24">
+    <path d="m6 9 6 6 6-6"></path>
+  </symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M20 6 9 17l-5-5"></path>
+  </symbol>
+  <symbol id="icon-cart" viewBox="0 0 24 24">
+    <path d="M3 4h2l2.5 11h10.5l2-8H7"></path>
+    <circle cx="9" cy="20" r="1"></circle>
+    <circle cx="17" cy="20" r="1"></circle>
+  </symbol>
+  <symbol id="icon-calendar" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+    <path d="M8 3v4M16 3v4M3 10h18"></path>
+  </symbol>
+  <symbol id="icon-accessibility" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"></circle>
+    <circle cx="12" cy="6.5" r="1.5"></circle>
+    <path d="M6 10.5c3-1 9-1 12 0M12 8v6.5m-3 5.5l3-5.5 3 5.5"></path>
+  </symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24">
+    <path d="M5 4h4l2 5-2.5 2a14 14 0 0 0 4.5 4.5L15 13l5 2v4c-9 2-17-6-15-15Z"></path>
+  </symbol>
+  <symbol id="icon-leaf" viewBox="0 0 24 24">
+    <path d="M20 4C9 4 4 9 4 20 15 20 20 15 20 4Z"></path>
+    <path d="M4 20 15 9"></path>
+  </symbol>
+  <symbol id="icon-flame" viewBox="0 0 24 24">
+    <path d="M12 22c5 0 8-3.5 8-8 0-5-4-7-5-11-4 2-5 6-5 8-2-1-3-3-3-4-2 2-3 5-3 8 0 4 3 7 8 7Z"></path>
+    <path d="M12 22c2 0 3.5-1.5 3.5-3.5 0-2-1.5-3.1-2.5-4.5-2 1-3 2.8-3 4.5 0 2 1 3.5 2 3.5Z"></path>
+  </symbol>
+</svg>
+
 
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
   <a class="skip-link" href="#pedido">Saltar a realizar pedido</a>
 
-  <div class="topbar" aria-label="Información rápida del restaurante">
-    <div class="container">
-      <span>Pizza artesanal al horno de piedra · Entregas y reservas</span>
-      <span>
-        <a href="tel:+573001234567" aria-label="Llamar a Horno Vivo, 300 123 4567">
-          <svg class="svg-icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
-          300 123 4567
-        </a>
-        &nbsp;|&nbsp; Abierto hoy: 12:00 m. – 10:00 p. m.
+  <div id="page-content">
+    <div class="topbar" aria-label="Información rápida del restaurante">
+  <div class="container">
+    <span>Pizza artesanal al horno de piedra · Entregas y reservas</span>
+    <span>
+      <a href="https://wa.me/573125108134" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Horno Vivo, 312 510 8134">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
+        312 510 8134
+      </a>
+      &nbsp;|&nbsp; Abierto hoy: 12:00 m. – 10:00 p. m.
+    </span>
+  </div>
+</div>
+
+    <header>
+  <div class="container nav-wrap">
+    <a class="brand" href="#inicio" aria-label="Horno Vivo Pizzería, ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="svg-icon"><use href="#icon-pizza"></use></svg>
       </span>
+      <span>Horno Vivo</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button"
+            aria-expanded="false" aria-controls="mainNav"
+            aria-label="Abrir menú principal">
+      <svg class="svg-icon" aria-hidden="true"><use href="#icon-menu"></use></svg>
+    </button>
+
+    <nav class="primary-nav" id="mainNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio" aria-current="page">Inicio</a></li>
+        <li class="nav-dropdown">
+          <button id="productsButton" type="button" aria-expanded="false" aria-controls="productsMenu">
+            Nuestra carta
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+          </button>
+          <div class="dropdown-panel" id="productsMenu" hidden>
+            <a href="#menu">Pizzas artesanales</a>
+            <a href="#menu">Opciones vegetarianas</a>
+            <a href="#pedido">Arma tu pedido</a>
+          </div>
+        </li>
+        <li><a href="#historia">Experiencia</a></li>
+        <li><a href="#horarios">Horarios</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a class="nav-cta" href="#pedido">
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+          Pedir ahora
+        </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="contenido" tabindex="-1">
+      <div class="container breadcrumbs">
+  <nav aria-label="Ruta de navegación">
+    <ol>
+      <li><a href="#inicio">Inicio</a></li>
+      <li aria-current="page">Pizzería artesanal</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-flame"></use></svg>
+        Horneada al momento
+      </span>
+      <h1 id="hero-title">Pizza artesanal, sabor que reúne</h1>
+      <p class="lead">
+        Masa de fermentación lenta, salsa de tomate natural e ingredientes frescos.
+        Disfruta una experiencia cálida, rápida y accesible para todas las personas.
+      </p>
+      <div class="button-row">
+        <a class="btn btn-primary" href="#menu">
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-pizza"></use></svg>
+          Ver la carta
+        </a>
+        <button class="btn btn-secondary" id="openInfoModal" type="button">
+          Accesibilidad del sitio
+        </button>
+      </div>
+      <ul class="trust-list" aria-label="Características del restaurante">
+        <li><svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Ingredientes frescos</li>
+        <li><svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Opción vegetariana</li>
+        <li><svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Entrega a domicilio</li>
+      </ul>
+    </div>
+
+    <figure class="hero-visual visual-image">
+      <svg viewBox="0 0 600 500" role="img" aria-labelledby="heroSvgTitle heroSvgDesc" width="600" height="500">
+        <title id="heroSvgTitle">Pizza artesanal recién horneada</title>
+        <desc id="heroSvgDesc">Ilustración de una pizza con tomates, albahaca y queso sobre una mesa cálida junto a un horno.</desc>
+        <rect width="600" height="500" rx="32" fill="#F9EDDA"/>
+        <circle cx="474" cy="104" r="63" fill="#F2C14E"/>
+        <path d="M404 232c0-83 55-136 126-136v204H404Z" fill="#8B1E12"/>
+        <path d="M429 232c0-59 38-97 77-103v103h-77Z" fill="#21120C"/>
+        <path d="M0 365h600v135H0z" fill="#C78455"/>
+        <ellipse cx="245" cy="405" rx="196" ry="28" fill="#A7603E" opacity=".55"/>
+        <ellipse cx="245" cy="350" rx="175" ry="94" fill="#D99A56"/>
+        <ellipse cx="245" cy="339" rx="157" ry="82" fill="#D43C24"/>
+        <path d="M101 340c16-73 274-91 300-6-19 84-278 100-300 6Z" fill="#F2C14E" opacity=".86"/>
+        <g fill="#8B1E12">
+          <circle cx="172" cy="314" r="19"/><circle cx="272" cy="300" r="21"/>
+          <circle cx="324" cy="351" r="18"/><circle cx="214" cy="367" r="21"/>
+          <circle cx="362" cy="316" r="16"/><circle cx="139" cy="350" r="15"/>
+        </g>
+        <g fill="#38451B">
+          <path d="M201 326c-21-24 17-38 30-11-5 15-15 18-30 11Z"/>
+          <path d="M291 370c-20-27 21-38 31-9-8 14-18 17-31 9Z"/>
+          <path d="M241 291c-12-27 30-29 32-2-10 11-20 13-32 2Z"/>
+        </g>
+        <g fill="#FFF7E5">
+          <ellipse cx="236" cy="333" rx="16" ry="9"/><ellipse cx="304" cy="318" rx="17" ry="9"/>
+          <ellipse cx="174" cy="344" rx="14" ry="8"/><ellipse cx="267" cy="356" rx="12" ry="7"/>
+        </g>
+        <path d="M47 175h114v134H47z" fill="#FFFFFF"/>
+        <rect x="58" y="187" width="92" height="62" rx="9" fill="#FFE6AD"/>
+        <path d="M102 199 77 238h50l-25-39Z" fill="#8B1E12"/>
+        <circle cx="101" cy="220" r="4" fill="#F2C14E"/>
+        <path d="M64 269h82M64 285h58" stroke="#38451B" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      <figcaption class="hero-badge">
+        <strong>Desde $24.900</strong>
+        Pizzas personales recién horneadas
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+      <section class="section-alt" id="menu" aria-labelledby="menu-title">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="menu-title">Favoritas de la casa</h2>
+      <p>Selecciona una pizza y agrégala al pedido; la actualización se anuncia accesiblemente.</p>
+    </div>
+
+    <div class="menu-cards">
+      <article class="pizza-card">
+        <div class="pizza-image visual-image">
+          <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Margarita con tomate, mozzarella y albahaca">
+            <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
+            <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
+            <circle cx="120" cy="81" r="66" fill="#D79A54"/>
+            <circle cx="120" cy="78" r="58" fill="#D6422A"/>
+            <g fill="#FFF8EE"><circle cx="87" cy="64" r="12"/><circle cx="137" cy="48" r="12"/><circle cx="157" cy="93" r="13"/><circle cx="101" cy="105" r="12"/></g>
+            <g fill="#38451B"><path d="M102 49c-18-17 14-27 23-8-5 10-13 12-23 8Z"/><path d="M129 83c-17-18 15-27 24-8-6 10-14 12-24 8Z"/><path d="M69 91c-18-18 14-29 23-9-5 10-13 12-23 9Z"/></g>
+          </svg>
+        </div>
+        <div class="pizza-card-content">
+          <h3>Margarita Original</h3>
+          <p>Mozzarella fresca, salsa pomodoro, albahaca y aceite de oliva.</p>
+          <div class="card-footer">
+            <span class="price">$29.900</span>
+            <button class="mini-button add-order" type="button" data-product="Margarita Original">
+              <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pizza-card">
+        <div class="pizza-image visual-image">
+          <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Pepperoni con queso y rodajas de pepperoni">
+            <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
+            <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
+            <circle cx="120" cy="81" r="66" fill="#D79A54"/>
+            <circle cx="120" cy="78" r="58" fill="#F2C14E"/>
+            <g fill="#8B1E12"><circle cx="91" cy="55" r="12"/><circle cx="138" cy="45" r="12"/><circle cx="158" cy="83" r="13"/><circle cx="111" cy="90" r="13"/><circle cx="82" cy="105" r="11"/><circle cx="140" cy="114" r="12"/></g>
+            <g fill="#F2C14E"><circle cx="88" cy="52" r="2.4"/><circle cx="136" cy="42" r="2.4"/><circle cx="155" cy="79" r="2.4"/><circle cx="108" cy="87" r="2.4"/></g>
+          </svg>
+        </div>
+        <div class="pizza-card-content">
+          <h3>Pepperoni Fuego</h3>
+          <p>Queso mozzarella, pepperoni dorado y toque de orégano artesanal.</p>
+          <div class="card-footer">
+            <span class="price">$34.900</span>
+            <button class="mini-button add-order" type="button" data-product="Pepperoni Fuego">
+              <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pizza-card">
+        <div class="pizza-image visual-image">
+          <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Huerta con vegetales, champiñones y pimentón">
+            <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
+            <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
+            <circle cx="120" cy="81" r="66" fill="#D79A54"/>
+            <circle cx="120" cy="78" r="58" fill="#F2C14E"/>
+            <g fill="#38451B"><path d="M85 51c-22-17 15-30 26-9-5 12-14 14-26 9Z"/><path d="M141 91c-20-18 16-31 28-10-6 13-15 15-28 10Z"/><path d="M79 102c-18-18 14-28 24-9-5 10-13 12-24 9Z"/></g>
+            <g fill="#D6422A"><path d="M116 39v28c12 2 17-7 15-15-2-8-7-12-15-13Z"/><path d="M158 55v28c12 2 17-7 15-15-2-8-7-12-15-13Z"/></g>
+            <g fill="#FFF8EE"><ellipse cx="116" cy="100" rx="14" ry="8"/><ellipse cx="141" cy="51" rx="13" ry="8"/></g>
+          </svg>
+        </div>
+        <div class="pizza-card-content">
+          <h3>Huerta Mediterránea</h3>
+          <p>Champiñones, pimentón asado, aceitunas, albahaca y mozzarella.</p>
+          <div class="card-footer">
+            <span class="price">$32.900</span>
+            <button class="mini-button add-order" type="button" data-product="Huerta Mediterránea">
+              <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="order-summary" role="status" aria-live="polite">
+      Productos agregados: <output id="cartCount">0</output>
+    </p>
+  </div>
+</section>
+
+      <section id="historia" aria-labelledby="story-title">
+  <div class="container two-columns">
+    <div>
+      <div class="section-heading">
+        <h2 id="story-title">Horno, mesa y tradición</h2>
+        <p>Una experiencia pensada para disfrutar con calma y pedir con facilidad.</p>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-flame"></use></svg>
+          <span>Horno de piedra con cocción uniforme y masa fermentada por 48 horas.</span>
+        </li>
+        <li>
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-leaf"></use></svg>
+          <span>Ingredientes identificados claramente y opciones vegetarianas disponibles.</span>
+        </li>
+        <li>
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-accessibility"></use></svg>
+          <span>Local y sitio web diseñados para una experiencia accesible e inclusiva.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="gallery" aria-label="Galería ilustrada del restaurante">
+      <figure class="visual-image">
+        <svg viewBox="0 0 500 210" role="img" aria-label="Interior cálido de Horno Vivo con mesas y horno">
+          <rect width="500" height="210" rx="18" fill="#F9EDDA"/>
+          <path d="M335 40h108v116H335z" fill="#8B1E12"/>
+          <path d="M355 156V95c0-30 69-30 69 0v61Z" fill="#21120C"/>
+          <rect x="0" y="156" width="500" height="54" fill="#C78455"/>
+          <rect x="72" y="101" width="133" height="10" rx="5" fill="#8B1E12"/>
+          <path d="M92 111v53M185 111v53" stroke="#38451B" stroke-width="7"/>
+          <rect x="245" y="107" width="72" height="9" rx="4" fill="#8B1E12"/>
+          <path d="M255 116v45M307 116v45" stroke="#38451B" stroke-width="6"/>
+          <path d="M22 40h152" stroke="#38451B" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="74" cy="69" r="18" fill="#F2C14E"/><circle cx="126" cy="69" r="18" fill="#F2C14E"/>
+        </svg>
+        <figcaption>Salón accesible y acogedor</figcaption>
+      </figure>
+      <figure class="visual-image">
+        <svg viewBox="0 0 220 155" role="img" aria-label="Ingredientes frescos: tomate y albahaca">
+          <rect width="220" height="155" rx="16" fill="#FFE6AD"/>
+          <circle cx="78" cy="88" r="34" fill="#D6422A"/>
+          <path d="M78 52c-10-17-23-15-26-8 10-2 17 2 26 8 10-7 18-10 29-7-5-9-17-11-29 7Z" fill="#38451B"/>
+          <path d="M129 109c-27-31 22-52 39-17-8 21-21 24-39 17Z" fill="#38451B"/>
+        </svg>
+        <figcaption>Ingredientes seleccionados</figcaption>
+      </figure>
+      <figure class="visual-image">
+        <svg viewBox="0 0 220 155" role="img" aria-label="Caja de pizza para entrega a domicilio">
+          <rect width="220" height="155" rx="16" fill="#FFE6AD"/>
+          <path d="M38 66 72 39h95l19 27-25 52H57Z" fill="#C78455"/>
+          <path d="M38 66h148l-17 18H55Z" fill="#F9EDDA"/>
+          <circle cx="112" cy="93" r="18" fill="#8B1E12"/>
+          <path d="M104 101 112 84l8 17Z" fill="#F2C14E"/>
+        </svg>
+        <figcaption>Empaque para domicilio</figcaption>
+      </figure>
     </div>
   </div>
+</section>
 
-  <header>
-    <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="Horno Vivo Pizzería, ir al inicio">
-        <span class="brand-mark" aria-hidden="true">
-          <svg class="svg-icon"><use href="#icon-pizza"></use></svg>
-        </span>
-        <span>Horno Vivo</span>
-      </a>
-
-      <button class="menu-toggle" id="menuToggle" type="button"
-              aria-expanded="false" aria-controls="mainNav"
-              aria-label="Abrir menú principal">
-        <svg class="svg-icon" aria-hidden="true"><use href="#icon-menu"></use></svg>
-      </button>
-
-      <nav class="primary-nav" id="mainNav" aria-label="Navegación principal">
-        <ul>
-          <li><a href="#inicio" aria-current="page">Inicio</a></li>
-          <li class="nav-dropdown">
-            <button id="productsButton" type="button" aria-expanded="false" aria-controls="productsMenu">
-              Nuestra carta
-              <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
-            </button>
-            <div class="dropdown-panel" id="productsMenu" hidden>
-              <a href="#menu">Pizzas artesanales</a>
-              <a href="#menu">Opciones vegetarianas</a>
-              <a href="#pedido">Arma tu pedido</a>
-            </div>
-          </li>
-          <li><a href="#historia">Experiencia</a></li>
-          <li><a href="#horarios">Horarios</a></li>
-          <li><a href="#preguntas">Preguntas</a></li>
-          <li><a class="nav-cta" href="#pedido">
-            <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
-            Pedir ahora
-          </a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="contenido" tabindex="-1">
-    <div class="container breadcrumbs">
-      <nav aria-label="Ruta de navegación">
-        <ol>
-          <li><a href="#inicio">Inicio</a></li>
-          <li aria-current="page">Pizzería artesanal</li>
-        </ol>
-      </nav>
+      <section class="section-alt" id="horarios" aria-labelledby="hours-title">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="hours-title">Horarios y servicios</h2>
+      <p>Consulta disponibilidad para salón, recogida y domicilio.</p>
     </div>
 
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">
-            <svg class="svg-icon" aria-hidden="true"><use href="#icon-flame"></use></svg>
-            Horneada al momento
-          </span>
-          <h1 id="hero-title">Pizza artesanal, sabor que reúne</h1>
-          <p class="lead">
-            Masa de fermentación lenta, salsa de tomate natural e ingredientes frescos.
-            Disfruta una experiencia cálida, rápida y accesible para todas las personas.
-          </p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="#menu">
-              <svg class="svg-icon" aria-hidden="true"><use href="#icon-pizza"></use></svg>
-              Ver la carta
-            </a>
-            <button class="btn btn-secondary" id="openInfoModal" type="button">
-              Accesibilidad del sitio
-            </button>
-          </div>
-          <ul class="trust-list" aria-label="Características del restaurante">
-            <li><svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Ingredientes frescos</li>
-            <li><svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Opción vegetariana</li>
-            <li><svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Entrega a domicilio</li>
-          </ul>
-        </div>
+    <div class="table-scroll" tabindex="0" aria-label="Tabla de horarios, desplazable horizontalmente en pantallas pequeñas">
+      <table>
+        <caption>Atención semanal de Horno Vivo</caption>
+        <thead>
+          <tr>
+            <th scope="col">Servicio</th>
+            <th scope="col">Lunes a jueves</th>
+            <th scope="col">Viernes y sábado</th>
+            <th scope="col">Domingo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Comer en el salón</th>
+            <td>12:00 m. – 9:30 p. m.</td>
+            <td>12:00 m. – 10:30 p. m.</td>
+            <td>12:00 m. – 8:30 p. m.</td>
+          </tr>
+          <tr>
+            <th scope="row">Recoger pedido</th>
+            <td>12:00 m. – 9:00 p. m.</td>
+            <td>12:00 m. – 10:00 p. m.</td>
+            <td>12:00 m. – 8:00 p. m.</td>
+          </tr>
+          <tr>
+            <th scope="row">Domicilio</th>
+            <td>12:00 m. – 8:45 p. m.</td>
+            <td>12:00 m. – 9:45 p. m.</td>
+            <td>12:00 m. – 7:45 p. m.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-        <figure class="hero-visual visual-image">
-          <svg viewBox="0 0 600 500" role="img" aria-labelledby="heroSvgTitle heroSvgDesc" width="600" height="500">
-            <title id="heroSvgTitle">Pizza artesanal recién horneada</title>
-            <desc id="heroSvgDesc">Ilustración de una pizza con tomates, albahaca y queso sobre una mesa cálida junto a un horno.</desc>
-            <rect width="600" height="500" rx="32" fill="#F9EDDA"/>
-            <circle cx="474" cy="104" r="63" fill="#F2C14E"/>
-            <path d="M404 232c0-83 55-136 126-136v204H404Z" fill="#8B1E12"/>
-            <path d="M429 232c0-59 38-97 77-103v103h-77Z" fill="#21120C"/>
-            <path d="M0 365h600v135H0z" fill="#C78455"/>
-            <ellipse cx="245" cy="405" rx="196" ry="28" fill="#A7603E" opacity=".55"/>
-            <ellipse cx="245" cy="350" rx="175" ry="94" fill="#D99A56"/>
-            <ellipse cx="245" cy="339" rx="157" ry="82" fill="#D43C24"/>
-            <path d="M101 340c16-73 274-91 300-6-19 84-278 100-300 6Z" fill="#F2C14E" opacity=".86"/>
-            <g fill="#8B1E12">
-              <circle cx="172" cy="314" r="19"/><circle cx="272" cy="300" r="21"/>
-              <circle cx="324" cy="351" r="18"/><circle cx="214" cy="367" r="21"/>
-              <circle cx="362" cy="316" r="16"/><circle cx="139" cy="350" r="15"/>
-            </g>
-            <g fill="#38451B">
-              <path d="M201 326c-21-24 17-38 30-11-5 15-15 18-30 11Z"/>
-              <path d="M291 370c-20-27 21-38 31-9-8 14-18 17-31 9Z"/>
-              <path d="M241 291c-12-27 30-29 32-2-10 11-20 13-32 2Z"/>
-            </g>
-            <g fill="#FFF7E5">
-              <ellipse cx="236" cy="333" rx="16" ry="9"/><ellipse cx="304" cy="318" rx="17" ry="9"/>
-              <ellipse cx="174" cy="344" rx="14" ry="8"/><ellipse cx="267" cy="356" rx="12" ry="7"/>
-            </g>
-            <path d="M47 175h114v134H47z" fill="#FFFFFF"/>
-            <rect x="58" y="187" width="92" height="62" rx="9" fill="#FFE6AD"/>
-            <path d="M102 199 77 238h50l-25-39Z" fill="#8B1E12"/>
-            <circle cx="101" cy="220" r="4" fill="#F2C14E"/>
-            <path d="M64 269h82M64 285h58" stroke="#38451B" stroke-width="7" stroke-linecap="round"/>
-          </svg>
-          <figcaption class="hero-badge">
-            <strong>Desde $24.900</strong>
-            Pizzas personales recién horneadas
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="section-alt" id="menu" aria-labelledby="menu-title">
-      <div class="container">
-        <div class="section-heading">
-          <h2 id="menu-title">Favoritas de la casa</h2>
-          <p>Selecciona una pizza y agrégala al pedido; la actualización se anuncia accesiblemente.</p>
-        </div>
-
-        <div class="menu-cards">
-          <article class="pizza-card">
-            <div class="pizza-image visual-image">
-              <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Margarita con tomate, mozzarella y albahaca">
-                <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
-                <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
-                <circle cx="120" cy="81" r="66" fill="#D79A54"/>
-                <circle cx="120" cy="78" r="58" fill="#D6422A"/>
-                <g fill="#FFF8EE"><circle cx="87" cy="64" r="12"/><circle cx="137" cy="48" r="12"/><circle cx="157" cy="93" r="13"/><circle cx="101" cy="105" r="12"/></g>
-                <g fill="#38451B"><path d="M102 49c-18-17 14-27 23-8-5 10-13 12-23 8Z"/><path d="M129 83c-17-18 15-27 24-8-6 10-14 12-24 8Z"/><path d="M69 91c-18-18 14-29 23-9-5 10-13 12-23 9Z"/></g>
-              </svg>
-            </div>
-            <div class="pizza-card-content">
-              <h3>Margarita Original</h3>
-              <p>Mozzarella fresca, salsa pomodoro, albahaca y aceite de oliva.</p>
-              <div class="card-footer">
-                <span class="price">$29.900</span>
-                <button class="mini-button add-order" type="button" data-product="Margarita Original">
-                  <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
-                  Agregar
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="pizza-card">
-            <div class="pizza-image visual-image">
-              <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Pepperoni con queso y rodajas de pepperoni">
-                <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
-                <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
-                <circle cx="120" cy="81" r="66" fill="#D79A54"/>
-                <circle cx="120" cy="78" r="58" fill="#F2C14E"/>
-                <g fill="#8B1E12"><circle cx="91" cy="55" r="12"/><circle cx="138" cy="45" r="12"/><circle cx="158" cy="83" r="13"/><circle cx="111" cy="90" r="13"/><circle cx="82" cy="105" r="11"/><circle cx="140" cy="114" r="12"/></g>
-                <g fill="#F2C14E"><circle cx="88" cy="52" r="2.4"/><circle cx="136" cy="42" r="2.4"/><circle cx="155" cy="79" r="2.4"/><circle cx="108" cy="87" r="2.4"/></g>
-              </svg>
-            </div>
-            <div class="pizza-card-content">
-              <h3>Pepperoni Fuego</h3>
-              <p>Queso mozzarella, pepperoni dorado y toque de orégano artesanal.</p>
-              <div class="card-footer">
-                <span class="price">$34.900</span>
-                <button class="mini-button add-order" type="button" data-product="Pepperoni Fuego">
-                  <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
-                  Agregar
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="pizza-card">
-            <div class="pizza-image visual-image">
-              <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Huerta con vegetales, champiñones y pimentón">
-                <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
-                <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
-                <circle cx="120" cy="81" r="66" fill="#D79A54"/>
-                <circle cx="120" cy="78" r="58" fill="#F2C14E"/>
-                <g fill="#38451B"><path d="M85 51c-22-17 15-30 26-9-5 12-14 14-26 9Z"/><path d="M141 91c-20-18 16-31 28-10-6 13-15 15-28 10Z"/><path d="M79 102c-18-18 14-28 24-9-5 10-13 12-24 9Z"/></g>
-                <g fill="#D6422A"><path d="M116 39v28c12 2 17-7 15-15-2-8-7-12-15-13Z"/><path d="M158 55v28c12 2 17-7 15-15-2-8-7-12-15-13Z"/></g>
-                <g fill="#FFF8EE"><ellipse cx="116" cy="100" rx="14" ry="8"/><ellipse cx="141" cy="51" rx="13" ry="8"/></g>
-              </svg>
-            </div>
-            <div class="pizza-card-content">
-              <h3>Huerta Mediterránea</h3>
-              <p>Champiñones, pimentón asado, aceitunas, albahaca y mozzarella.</p>
-              <div class="card-footer">
-                <span class="price">$32.900</span>
-                <button class="mini-button add-order" type="button" data-product="Huerta Mediterránea">
-                  <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
-                  Agregar
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <p class="order-summary" role="status" aria-live="polite">
-          Productos agregados: <output id="cartCount">0</output>
+      <section id="pedido" aria-labelledby="order-title">
+  <div class="container two-columns">
+    <div>
+      <div class="section-heading">
+        <h2 id="order-title">Solicita tu pedido o reserva</h2>
+        <p>
+          Completa el formulario. Los campos marcados con
+          <span class="required" aria-hidden="true">*</span>
+          <span class="sr-only">asterisco</span> son obligatorios.
         </p>
       </div>
-    </section>
+      <p>
+        Confirmaremos disponibilidad y valor final por el canal elegido.
+        Para alergias alimentarias, informa tu requerimiento en el mensaje.
+      </p>
+    </div>
 
-    <section id="historia" aria-labelledby="story-title">
-      <div class="container two-columns">
-        <div>
-          <div class="section-heading">
-            <h2 id="story-title">Horno, mesa y tradición</h2>
-            <p>Una experiencia pensada para disfrutar con calma y pedir con facilidad.</p>
-          </div>
-          <ul class="feature-list">
-            <li>
-              <svg class="svg-icon" aria-hidden="true"><use href="#icon-flame"></use></svg>
-              <span>Horno de piedra con cocción uniforme y masa fermentada por 48 horas.</span>
-            </li>
-            <li>
-              <svg class="svg-icon" aria-hidden="true"><use href="#icon-leaf"></use></svg>
-              <span>Ingredientes identificados claramente y opciones vegetarianas disponibles.</span>
-            </li>
-            <li>
-              <svg class="svg-icon" aria-hidden="true"><use href="#icon-accessibility"></use></svg>
-              <span>Local y sitio web diseñados para una experiencia accesible e inclusiva.</span>
-            </li>
-          </ul>
+    <form id="orderForm" novalidate aria-describedby="privacyNote">
+      <div id="formAlert" class="form-alert" role="alert" tabindex="-1">
+        Revisa los campos marcados antes de enviar tu solicitud.
+      </div>
+
+      <div class="fields">
+        <div class="field">
+          <label for="fullName">Nombre completo <span class="required" aria-hidden="true">*</span></label>
+          <input id="fullName" name="fullName" type="text" autocomplete="name" required aria-describedby="fullNameError">
+          <span class="field-error" id="fullNameError">Escribe tu nombre completo.</span>
         </div>
 
-        <div class="gallery" aria-label="Galería ilustrada del restaurante">
-          <figure class="visual-image">
-            <svg viewBox="0 0 500 210" role="img" aria-label="Interior cálido de Horno Vivo con mesas y horno">
-              <rect width="500" height="210" rx="18" fill="#F9EDDA"/>
-              <path d="M335 40h108v116H335z" fill="#8B1E12"/>
-              <path d="M355 156V95c0-30 69-30 69 0v61Z" fill="#21120C"/>
-              <rect x="0" y="156" width="500" height="54" fill="#C78455"/>
-              <rect x="72" y="101" width="133" height="10" rx="5" fill="#8B1E12"/>
-              <path d="M92 111v53M185 111v53" stroke="#38451B" stroke-width="7"/>
-              <rect x="245" y="107" width="72" height="9" rx="4" fill="#8B1E12"/>
-              <path d="M255 116v45M307 116v45" stroke="#38451B" stroke-width="6"/>
-              <path d="M22 40h152" stroke="#38451B" stroke-width="8" stroke-linecap="round"/>
-              <circle cx="74" cy="69" r="18" fill="#F2C14E"/><circle cx="126" cy="69" r="18" fill="#F2C14E"/>
-            </svg>
-            <figcaption>Salón accesible y acogedor</figcaption>
-          </figure>
-          <figure class="visual-image">
-            <svg viewBox="0 0 220 155" role="img" aria-label="Ingredientes frescos: tomate y albahaca">
-              <rect width="220" height="155" rx="16" fill="#FFE6AD"/>
-              <circle cx="78" cy="88" r="34" fill="#D6422A"/>
-              <path d="M78 52c-10-17-23-15-26-8 10-2 17 2 26 8 10-7 18-10 29-7-5-9-17-11-29 7Z" fill="#38451B"/>
-              <path d="M129 109c-27-31 22-52 39-17-8 21-21 24-39 17Z" fill="#38451B"/>
-            </svg>
-            <figcaption>Ingredientes seleccionados</figcaption>
-          </figure>
-          <figure class="visual-image">
-            <svg viewBox="0 0 220 155" role="img" aria-label="Caja de pizza para entrega a domicilio">
-              <rect width="220" height="155" rx="16" fill="#FFE6AD"/>
-              <path d="M38 66 72 39h95l19 27-25 52H57Z" fill="#C78455"/>
-              <path d="M38 66h148l-17 18H55Z" fill="#F9EDDA"/>
-              <circle cx="112" cy="93" r="18" fill="#8B1E12"/>
-              <path d="M104 101 112 84l8 17Z" fill="#F2C14E"/>
-            </svg>
-            <figcaption>Empaque para domicilio</figcaption>
-          </figure>
+        <div class="field">
+          <label for="phone">Teléfono <span class="required" aria-hidden="true">*</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
+                 required pattern="[0-9\s\+\-\(\)]{7,20}" aria-describedby="phoneHint phoneError">
+          <span class="hint" id="phoneHint">Ejemplo: 312 510 8134.</span>
+          <span class="field-error" id="phoneError">Ingresa un teléfono válido.</span>
+        </div>
+
+        <div class="field">
+          <label for="requestType">Tipo de solicitud <span class="required" aria-hidden="true">*</span></label>
+          <select id="requestType" name="requestType" required aria-describedby="requestTypeError">
+            <option value="">Selecciona una opción</option>
+            <option>Pedido a domicilio</option>
+            <option>Recoger en el local</option>
+            <option>Reserva de mesa</option>
+          </select>
+          <span class="field-error" id="requestTypeError">Selecciona el tipo de solicitud.</span>
+        </div>
+
+        <div class="field">
+          <label for="pizzaChoice">Pizza preferida <span class="required" aria-hidden="true">*</span></label>
+          <select id="pizzaChoice" name="pizzaChoice" required aria-describedby="pizzaChoiceError">
+            <option value="">Selecciona una pizza</option>
+            <option>Margarita Original</option>
+            <option>Pepperoni Fuego</option>
+            <option>Huerta Mediterránea</option>
+          </select>
+          <span class="field-error" id="pizzaChoiceError">Selecciona una pizza.</span>
+        </div>
+
+        <div class="field">
+          <label for="preferredDate">Fecha preferida <span class="required" aria-hidden="true">*</span></label>
+          <input id="preferredDate" name="preferredDate" type="date" required aria-describedby="dateError">
+          <span class="field-error" id="dateError">Selecciona una fecha válida.</span>
+        </div>
+
+        <div class="field">
+          <label for="contactMethod">Canal de confirmación</label>
+          <select id="contactMethod" name="contactMethod">
+            <option>Llamada telefónica</option>
+            <option>WhatsApp</option>
+            <option>Correo electrónico</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="message">Indicaciones o alergias alimentarias</label>
+          <textarea id="message" name="message" maxlength="400" aria-describedby="messageHint"></textarea>
+          <span class="hint" id="messageHint">Máximo 400 caracteres. Informa alergias o necesidades de accesibilidad.</span>
+        </div>
+
+        <div class="field full">
+          <label>
+            <input id="consent" name="consent" type="checkbox" required aria-describedby="consentError">
+            Autorizo el contacto para gestionar mi pedido o reserva
+            <span class="required" aria-hidden="true">*</span>
+          </label>
+          <span class="field-error" id="consentError">Debes autorizar el contacto.</span>
         </div>
       </div>
-    </section>
 
-    <section class="section-alt" id="horarios" aria-labelledby="hours-title">
-      <div class="container">
-        <div class="section-heading">
-          <h2 id="hours-title">Horarios y servicios</h2>
-          <p>Consulta disponibilidad para salón, recogida y domicilio.</p>
-        </div>
+      <p class="hint" id="privacyNote">Tus datos se utilizarán solamente para atender esta solicitud.</p>
+      <button class="btn btn-primary" type="submit">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+        Enviar solicitud
+      </button>
+    </form>
+  </div>
+</section>
 
-        <div class="table-scroll" tabindex="0" aria-label="Tabla de horarios, desplazable horizontalmente en pantallas pequeñas">
-          <table>
-            <caption>Atención semanal de Horno Vivo</caption>
-            <thead>
-              <tr>
-                <th scope="col">Servicio</th>
-                <th scope="col">Lunes a jueves</th>
-                <th scope="col">Viernes y sábado</th>
-                <th scope="col">Domingo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Comer en el salón</th>
-                <td>12:00 m. – 9:30 p. m.</td>
-                <td>12:00 m. – 10:30 p. m.</td>
-                <td>12:00 m. – 8:30 p. m.</td>
-              </tr>
-              <tr>
-                <th scope="row">Recoger pedido</th>
-                <td>12:00 m. – 9:00 p. m.</td>
-                <td>12:00 m. – 10:00 p. m.</td>
-                <td>12:00 m. – 8:00 p. m.</td>
-              </tr>
-              <tr>
-                <th scope="row">Domicilio</th>
-                <td>12:00 m. – 8:45 p. m.</td>
-                <td>12:00 m. – 9:45 p. m.</td>
-                <td>12:00 m. – 7:45 p. m.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+      <section class="section-alt" id="preguntas" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <p>Información clara para disfrutar tu pedido con tranquilidad.</p>
+    </div>
 
-    <section id="pedido" aria-labelledby="order-title">
-      <div class="container two-columns">
-        <div>
-          <div class="section-heading">
-            <h2 id="order-title">Solicita tu pedido o reserva</h2>
-            <p>
-              Completa el formulario. Los campos marcados con
-              <span class="required" aria-hidden="true">*</span>
-              <span class="sr-only">asterisco</span> son obligatorios.
-            </p>
-          </div>
-          <p>
-            Confirmaremos disponibilidad y valor final por el canal elegido.
-            Para alergias alimentarias, informa tu requerimiento en el mensaje.
-          </p>
-        </div>
-
-        <form id="orderForm" novalidate aria-describedby="privacyNote">
-          <div id="formAlert" class="form-alert" role="alert" tabindex="-1">
-            Revisa los campos marcados antes de enviar tu solicitud.
-          </div>
-
-          <div class="fields">
-            <div class="field">
-              <label for="fullName">Nombre completo <span class="required" aria-hidden="true">*</span></label>
-              <input id="fullName" name="fullName" type="text" autocomplete="name" required aria-describedby="fullNameError">
-              <span class="field-error" id="fullNameError">Escribe tu nombre completo.</span>
-            </div>
-
-            <div class="field">
-              <label for="phone">Teléfono <span class="required" aria-hidden="true">*</span></label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
-                     required pattern="[0-9 +()-]{7,20}" aria-describedby="phoneHint phoneError">
-              <span class="hint" id="phoneHint">Ejemplo: 300 123 4567.</span>
-              <span class="field-error" id="phoneError">Ingresa un teléfono válido.</span>
-            </div>
-
-            <div class="field">
-              <label for="requestType">Tipo de solicitud <span class="required" aria-hidden="true">*</span></label>
-              <select id="requestType" name="requestType" required aria-describedby="requestTypeError">
-                <option value="">Selecciona una opción</option>
-                <option>Pedido a domicilio</option>
-                <option>Recoger en el local</option>
-                <option>Reserva de mesa</option>
-              </select>
-              <span class="field-error" id="requestTypeError">Selecciona el tipo de solicitud.</span>
-            </div>
-
-            <div class="field">
-              <label for="pizzaChoice">Pizza preferida <span class="required" aria-hidden="true">*</span></label>
-              <select id="pizzaChoice" name="pizzaChoice" required aria-describedby="pizzaChoiceError">
-                <option value="">Selecciona una pizza</option>
-                <option>Margarita Original</option>
-                <option>Pepperoni Fuego</option>
-                <option>Huerta Mediterránea</option>
-              </select>
-              <span class="field-error" id="pizzaChoiceError">Selecciona una pizza.</span>
-            </div>
-
-            <div class="field">
-              <label for="preferredDate">Fecha preferida <span class="required" aria-hidden="true">*</span></label>
-              <input id="preferredDate" name="preferredDate" type="date" required aria-describedby="dateError">
-              <span class="field-error" id="dateError">Selecciona una fecha válida.</span>
-            </div>
-
-            <div class="field">
-              <label for="contactMethod">Canal de confirmación</label>
-              <select id="contactMethod" name="contactMethod">
-                <option>Llamada telefónica</option>
-                <option>WhatsApp</option>
-                <option>Correo electrónico</option>
-              </select>
-            </div>
-
-            <div class="field full">
-              <label for="message">Indicaciones o alergias alimentarias</label>
-              <textarea id="message" name="message" maxlength="400" aria-describedby="messageHint"></textarea>
-              <span class="hint" id="messageHint">Máximo 400 caracteres. Informa alergias o necesidades de accesibilidad.</span>
-            </div>
-
-            <div class="field full">
-              <label>
-                <input id="consent" name="consent" type="checkbox" required aria-describedby="consentError">
-                Autorizo el contacto para gestionar mi pedido o reserva
-                <span class="required" aria-hidden="true">*</span>
-              </label>
-              <span class="field-error" id="consentError">Debes autorizar el contacto.</span>
-            </div>
-          </div>
-
-          <p class="hint" id="privacyNote">Tus datos se utilizarán solamente para atender esta solicitud.</p>
-          <button class="btn btn-primary" type="submit">
-            <svg class="svg-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
-            Enviar solicitud
+    <div class="accordion">
+      <article class="accordion-item">
+        <h3>
+          <button class="accordion-trigger" id="faqTrigger1" type="button"
+                  aria-expanded="false" aria-controls="faqPanel1">
+            ¿Tienen opciones vegetarianas?
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
           </button>
-        </form>
-      </div>
-    </section>
+        </h3>
+        <div class="accordion-panel" id="faqPanel1" role="region" aria-labelledby="faqTrigger1" hidden>
+          Sí. La pizza Huerta Mediterránea es vegetariana y puedes solicitar ajustes de ingredientes al confirmar tu pedido.
+        </div>
+      </article>
 
-    <section class="section-alt" id="preguntas" aria-labelledby="faq-title">
-      <div class="container">
-        <div class="section-heading">
-          <h2 id="faq-title">Preguntas frecuentes</h2>
-          <p>Información clara para disfrutar tu pedido con tranquilidad.</p>
+      <article class="accordion-item">
+        <h3>
+          <button class="accordion-trigger" id="faqTrigger2" type="button"
+                  aria-expanded="false" aria-controls="faqPanel2">
+            ¿Puedo informar alergias o restricciones alimentarias?
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+          </button>
+        </h3>
+        <div class="accordion-panel" id="faqPanel2" role="region" aria-labelledby="faqTrigger2" hidden>
+          Sí. Escríbelas en el formulario o comunícalas telefónicamente antes de confirmar el pedido.
+        </div>
+      </article>
+
+      <article class="accordion-item">
+        <h3>
+          <button class="accordion-trigger" id="faqTrigger3" type="button"
+                  aria-expanded="false" aria-controls="faqPanel3">
+            ¿El restaurante cuenta con acceso inclusivo?
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+          </button>
+        </h3>
+        <div class="accordion-panel" id="faqPanel3" role="region" aria-labelledby="faqTrigger3" hidden>
+          El concepto de esta plantilla contempla acceso sin barreras, mesas adaptables e información accesible. Verifica estos servicios con el local real antes de publicar.
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+      <section id="accesibilidad" aria-labelledby="a11y-title">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="a11y-title">Compromiso de accesibilidad digital</h2>
+      <p>Nuestra web está diseñada para ser usable y disfrutable por todas las personas, independientemente de sus capacidades.</p>
+    </div>
+    
+    <div class="accessibility-statement">
+      <div class="a11y-intro">
+        <p>
+          Esta página utiliza estándares modernos de accesibilidad web (WCAG 2.1 Nivel AA) para asegurar una navegación fluida, robusta e independiente de herramientas externas. El panel de ajustes visuales es complementario: el sitio conserva su estructura accesible aun cuando las herramientas adicionales no se activen.
+        </p>
+      </div>
+
+      <div class="a11y-features-grid">
+        <div class="a11y-feature-card">
+          <h3>
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-accessibility"></use></svg>
+            HTML Semántico y ARIA
+          </h3>
+          <p>Estructura limpia usando etiquetas de HTML5 (nav, header, main, section, footer) que facilitan la lectura en lectores de pantalla (como NVDA o JAWS), además de roles y estados ARIA que anuncian cambios en vivo.</p>
         </div>
 
-        <div class="accordion">
-          <article class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="faqTrigger1" type="button"
-                      aria-expanded="false" aria-controls="faqPanel1">
-                ¿Tienen opciones vegetarianas?
-                <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="faqPanel1" role="region" aria-labelledby="faqTrigger1" hidden>
-              Sí. La pizza Huerta Mediterránea es vegetariana y puedes solicitar ajustes de ingredientes al confirmar tu pedido.
-            </div>
-          </article>
+        <div class="a11y-feature-card">
+          <h3>
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>
+            Navegación por Teclado
+          </h3>
+          <p>Todo el sitio es navegable usando la tecla <kbd>Tab</kbd>, con enlaces de salto ocultos al inicio y un foco visible altamente destacado para evitar desorientación visual.</p>
+        </div>
 
-          <article class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="faqTrigger2" type="button"
-                      aria-expanded="false" aria-controls="faqPanel2">
-                ¿Puedo informar alergias o restricciones alimentarias?
-                <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="faqPanel2" role="region" aria-labelledby="faqTrigger2" hidden>
-              Sí. Escríbelas en el formulario o comunícalas telefónicamente antes de confirmar el pedido.
-            </div>
-          </article>
+        <div class="a11y-feature-card">
+          <h3>
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-leaf"></use></svg>
+            Contraste y Adaptabilidad
+          </h3>
+          <p>Los colores por defecto cumplen con una relación de contraste superior a 8.5:1. Mediante el panel flotante, puedes activar temas de Alto Contraste, Modo Oscuro, o cambiar el tamaño de la tipografía de forma proporcional.</p>
+        </div>
 
-          <article class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="faqTrigger3" type="button"
-                      aria-expanded="false" aria-controls="faqPanel3">
-                ¿El restaurante cuenta con acceso inclusivo?
-                <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="faqPanel3" role="region" aria-labelledby="faqTrigger3" hidden>
-              El concepto de esta plantilla contempla acceso sin barreras, mesas adaptables e información accesible. Verifica estos servicios con el local real antes de publicar.
-            </div>
-          </article>
+        <div class="a11y-feature-card">
+          <h3>
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+            Formularios Anunciables
+          </h3>
+          <p>El formulario de pedidos valida la información en tiempo real, vinculando las descripciones de los errores con los campos interactivos correspondientes de forma que los lectores de voz los puedan anunciar.</p>
         </div>
       </div>
-    </section>
 
-    <section id="accesibilidad" aria-labelledby="a11y-title">
-      <div class="container">
-        <div class="section-heading">
-          <h2 id="a11y-title">Compromiso de accesibilidad digital</h2>
-        </div>
-        <div class="accessibility-statement">
-          <p>
-            Esta página utiliza HTML semántico, navegación por teclado, foco visible,
-            contrastes reforzados, imágenes SVG con descripciones, formulario con errores anunciables,
-            regiones dinámicas accesibles y soporte para reducción de movimiento.
-          </p>
-          <p>
-            El panel de ajustes es complementario: el sitio conserva su estructura accesible
-            aun cuando las herramientas adicionales no se activen.
-          </p>
-          <a href="mailto:accesibilidad@Hornovivo.example?subject=Reporte%20de%20accesibilidad">
-            Reportar una barrera de accesibilidad
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer aria-label="Pie de página">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">
-          <svg class="svg-icon" aria-hidden="true"><use href="#icon-pizza"></use></svg>
-          <span>Horno Vivo</span>
-        </div>
-        <p>Pizza artesanal, ingredientes frescos y experiencias accesibles para compartir.</p>
-      </div>
-      <div>
-        <strong>Contacto</strong>
-        <ul>
-          <li><a href="tel:+573001234567">300 123 4567</a></li>
-          <li><a href="mailto:pedidos@Hornovivo.example">pedidos@Hornovivo.example</a></li>
-          <li>Cúcuta, Colombia</li>
-        </ul>
-      </div>
-      <div>
-        <strong>Explora</strong>
-        <ul>
-          <li><a href="#menu">Carta</a></li>
-          <li><a href="#pedido">Pedidos y reservas</a></li>
-          <li><a href="#accesibilidad">Accesibilidad</a></li>
-        </ul>
+      <div class="a11y-footer-action">
+        <p><strong>¿Has encontrado una dificultad?</strong> Nos comprometemos a ofrecerte alternativas y corregirla de inmediato.</p>
+        <a href="mailto:accesibilidad@Hornovivo.example?subject=Reporte%20de%20accesibilidad" class="btn btn-secondary">
+          Reportar una barrera de accesibilidad
+        </a>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+    </main>
+
+    <footer aria-label="Pie de página">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-pizza"></use></svg>
+        <span>Horno Vivo</span>
+      </div>
+      <p>Pizza artesanal, ingredientes frescos y experiencias accesibles para compartir.</p>
+    </div>
+    <div>
+      <strong>Contacto</strong>
+      <ul>
+        <li><a href="https://wa.me/573125108134" target="_blank" rel="noopener" aria-label="WhatsApp de Horno Vivo, 312 510 8134">312 510 8134</a></li>
+        <li><a href="mailto:pedidos@Hornovivo.example">pedidos@Hornovivo.example</a></li>
+        <li>Cúcuta, Colombia</li>
+      </ul>
+    </div>
+    <div>
+      <strong>Explora</strong>
+      <ul>
+        <li><a href="#menu">Carta</a></li>
+        <li><a href="#pedido">Pedidos y reservas</a></li>
+        <li><a href="#accesibilidad">Accesibilidad</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
 
   <button class="a11y-launcher" id="a11yLauncher" type="button"
-          aria-expanded="false" aria-controls="a11yPanel"
-          aria-label="Abrir herramientas de accesibilidad">
-    <svg class="svg-icon" aria-hidden="true"><use href="#icon-accessibility"></use></svg>
-  </button>
+        aria-expanded="false" aria-controls="a11yPanel"
+        aria-label="Abrir herramientas de accesibilidad">
+  <svg class="svg-icon" aria-hidden="true"><use href="#icon-accessibility"></use></svg>
+</button>
 
-  <aside class="a11y-panel" id="a11yPanel" aria-labelledby="a11yPanelTitle" hidden>
-    <div class="a11y-header">
-      <h2 id="a11yPanelTitle">Accesibilidad</h2>
-      <button class="icon-button" id="closeA11y" type="button" aria-label="Cerrar herramientas">
+<aside class="a11y-panel" id="a11yPanel" aria-labelledby="a11yPanelTitle" hidden>
+  <div class="a11y-header">
+    <h2 id="a11yPanelTitle">Accesibilidad</h2>
+    <button class="icon-button" id="closeA11y" type="button" aria-label="Cerrar herramientas">
+      <svg class="svg-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+    </button>
+  </div>
+  <p class="hint">Personaliza la visualización y asistencia de lectura.</p>
+
+  <div class="text-size-row" aria-label="Cambiar tamaño del texto">
+    <button id="fontDecrease" type="button" aria-label="Reducir tamaño del texto">A−</button>
+    <button id="fontReset" type="button" aria-label="Restablecer tamaño del texto">A</button>
+    <button id="fontIncrease" type="button" aria-label="Aumentar tamaño del texto">A+</button>
+  </div>
+
+  <div class="a11y-controls" aria-label="Opciones visuales">
+    <button type="button" data-toggle="high-contrast" aria-pressed="false">Alto contraste</button>
+    <button type="button" data-theme-toggle aria-pressed="false">Modo oscuro</button>
+    <button type="button" data-toggle="grayscale" aria-pressed="false">Escala de grises</button>
+    <button type="button" data-toggle="pause-motion" aria-pressed="false">Pausar animación</button>
+    <button type="button" data-toggle="focus-strong" aria-pressed="false">Foco destacado</button>
+    <button type="button" data-toggle="guide-enabled" aria-pressed="false">Guía de lectura</button>
+    <button type="button" data-toggle="readable-font" aria-pressed="false">Fuente legible</button>
+    <button type="button" data-toggle="wide-spacing" aria-pressed="false">Espaciado</button>
+    <button type="button" data-toggle="hide-images" aria-pressed="false">Ocultar imágenes</button>
+    <button type="button" data-toggle="big-cursor" aria-pressed="false">Cursor grande</button>
+    <button type="button" id="speakPage" aria-pressed="false">Leer contenido</button>
+    <button type="button" id="keyboardHelp" aria-pressed="false">Atajos</button>
+  </div>
+
+  <div class="profile-buttons" aria-label="Perfiles rápidos">
+    <button type="button" data-profile="cognitive">Perfil cognitivo: lectura clara</button>
+    <button type="button" data-profile="lowVision">Perfil baja visión: contraste y tamaño</button>
+    <button type="button" data-profile="motor">Perfil motriz: foco y cursor</button>
+  </div>
+
+  <button class="reset-button" id="resetAccessibility" type="button">Restablecer ajustes</button>
+</aside>
+
+<div class="reading-guide" id="readingGuide" aria-hidden="true"></div>
+
+  <dialog id="infoModal" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+  <div class="dialog-content">
+    <div class="dialog-head">
+      <div>
+        <h2 id="modalTitle">Accesibilidad en Horno Vivo</h2>
+        <p id="modalDescription">
+          Recorre la página con teclado, amplía el texto, activa alto contraste,
+          modo oscuro o guía de lectura desde el botón de accesibilidad.
+        </p>
+      </div>
+      <button class="icon-button" id="closeInfoModal" type="button" aria-label="Cerrar ventana">
         <svg class="svg-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
       </button>
     </div>
-    <p class="hint">Personaliza la visualización y asistencia de lectura.</p>
+    <p>
+      Teclas útiles: <kbd>Tab</kbd> para avanzar, <kbd>Mayús + Tab</kbd> para retroceder,
+      <kbd>Esc</kbd> para cerrar y <kbd>Alt + A</kbd> para abrir herramientas de accesibilidad.
+    </p>
+    <button class="btn btn-primary" id="modalAccept" type="button">Entendido</button>
+  </div>
+</dialog>
 
-    <div class="text-size-row" aria-label="Cambiar tamaño del texto">
-      <button id="fontDecrease" type="button" aria-label="Reducir tamaño del texto">A−</button>
-      <button id="fontReset" type="button" aria-label="Restablecer tamaño del texto">A</button>
-      <button id="fontIncrease" type="button" aria-label="Aumentar tamaño del texto">A+</button>
-    </div>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+<div class="sr-only" id="liveRegion" aria-live="polite" aria-atomic="true"></div>
 
-    <div class="a11y-controls" aria-label="Opciones visuales">
-      <button type="button" data-toggle="high-contrast" aria-pressed="false">Alto contraste</button>
-      <button type="button" data-theme-toggle aria-pressed="false">Modo oscuro</button>
-      <button type="button" data-toggle="grayscale" aria-pressed="false">Escala de grises</button>
-      <button type="button" data-toggle="pause-motion" aria-pressed="false">Pausar animación</button>
-      <button type="button" data-toggle="focus-strong" aria-pressed="false">Foco destacado</button>
-      <button type="button" data-toggle="guide-enabled" aria-pressed="false">Guía de lectura</button>
-      <button type="button" data-toggle="readable-font" aria-pressed="false">Fuente legible</button>
-      <button type="button" data-toggle="wide-spacing" aria-pressed="false">Espaciado</button>
-      <button type="button" data-toggle="hide-images" aria-pressed="false">Ocultar imágenes</button>
-      <button type="button" data-toggle="big-cursor" aria-pressed="false">Cursor grande</button>
-      <button type="button" id="speakPage" aria-pressed="false">Leer contenido</button>
-      <button type="button" id="keyboardHelp" aria-pressed="false">Atajos</button>
-    </div>
 
-    <div class="profile-buttons" aria-label="Perfiles rápidos">
-      <button type="button" data-profile="cognitive">Perfil cognitivo: lectura clara</button>
-      <button type="button" data-profile="lowVision">Perfil baja visión: contraste y tamaño</button>
-      <button type="button" data-profile="motor">Perfil motriz: foco y cursor</button>
-    </div>
-
-    <button class="reset-button" id="resetAccessibility" type="button">Restablecer ajustes</button>
-  </aside>
-
-  <div class="reading-guide" id="readingGuide" aria-hidden="true"></div>
-
-  <dialog id="infoModal" aria-labelledby="modalTitle" aria-describedby="modalDescription">
-    <div class="dialog-content">
-      <div class="dialog-head">
-        <div>
-          <h2 id="modalTitle">Accesibilidad en Horno Vivo</h2>
-          <p id="modalDescription">
-            Recorre la página con teclado, amplía el texto, activa alto contraste,
-            modo oscuro o guía de lectura desde el botón de accesibilidad.
-          </p>
-        </div>
-        <button class="icon-button" id="closeInfoModal" type="button" aria-label="Cerrar ventana">
-          <svg class="svg-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
-        </button>
-      </div>
-      <p>
-        Teclas útiles: <kbd>Tab</kbd> para avanzar, <kbd>Mayús + Tab</kbd> para retroceder,
-        <kbd>Esc</kbd> para cerrar y <kbd>Alt + A</kbd> para abrir herramientas de accesibilidad.
-      </p>
-      <button class="btn btn-primary" id="modalAccept" type="button">Entendido</button>
-    </div>
-  </dialog>
-
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
-  <div class="sr-only" id="liveRegion" aria-live="polite" aria-atomic="true"></div>
-
-  <script>
-    'use strict';
-
-    const body = document.body;
-    const root = document.documentElement;
-    const liveRegion = document.getElementById('liveRegion');
-    const toast = document.getElementById('toast');
-    const preferenceKey = 'HornoVivoAccessibility';
-    const allowedClasses = [
-      'high-contrast', 'grayscale', 'pause-motion', 'focus-strong',
-      'guide-enabled', 'readable-font', 'wide-spacing', 'hide-images', 'big-cursor'
-    ];
-
-    let settings = { fontScale: 100, theme: 'light', classes: [] };
-
-    function announce(message) {
-      liveRegion.textContent = '';
-      window.setTimeout(() => { liveRegion.textContent = message; }, 40);
-    }
-
-    function showToast(message) {
-      toast.textContent = message;
-      toast.hidden = false;
-      window.clearTimeout(showToast.timer);
-      showToast.timer = window.setTimeout(() => { toast.hidden = true; }, 4300);
-    }
-
-    function saveSettings() {
-      try { localStorage.setItem(preferenceKey, JSON.stringify(settings)); } catch (error) {}
-    }
-
-    function updatePressedStates() {
-      document.querySelectorAll('[data-toggle]').forEach(button => {
-        button.setAttribute('aria-pressed', String(body.classList.contains(button.dataset.toggle)));
-      });
-      document.querySelector('[data-theme-toggle]')
-        .setAttribute('aria-pressed', String(settings.theme === 'dark'));
-    }
-
-    function applySettings() {
-      allowedClasses.forEach(item => body.classList.toggle(item, settings.classes.includes(item)));
-      root.dataset.theme = settings.theme;
-      root.style.setProperty('--font-size-base', `${settings.fontScale / 100}rem`);
-      updatePressedStates();
-      saveSettings();
-    }
-
-    function loadSettings() {
-      try {
-        const saved = JSON.parse(localStorage.getItem(preferenceKey));
-        if (saved && typeof saved === 'object') settings = { ...settings, ...saved };
-      } catch (error) {}
-      applySettings();
-    }
-
-    /* Navegación responsive y menú desplegable accesible */
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
-    const productsButton = document.getElementById('productsButton');
-    const productsMenu = document.getElementById('productsMenu');
-
-    function closeMobileMenu() {
-      mainNav.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Abrir menú principal');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú principal' : 'Abrir menú principal');
-    });
-
-    productsButton.addEventListener('click', () => {
-      const expanded = productsButton.getAttribute('aria-expanded') === 'true';
-      productsButton.setAttribute('aria-expanded', String(!expanded));
-      productsMenu.hidden = expanded;
-      productsMenu.classList.toggle('open', !expanded);
-    });
-
-    document.addEventListener('click', event => {
-      if (!event.target.closest('.nav-dropdown')) {
-        productsButton.setAttribute('aria-expanded', 'false');
-        productsMenu.hidden = true;
-        productsMenu.classList.remove('open');
-      }
-    });
-
-    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
-
-    /* Tarjetas dinámicas del pedido con anuncio accesible */
-    let cartTotal = 0;
-    const cartCount = document.getElementById('cartCount');
-    document.querySelectorAll('.add-order').forEach(button => {
-      button.addEventListener('click', () => {
-        cartTotal += 1;
-        cartCount.value = String(cartTotal);
-        cartCount.textContent = String(cartTotal);
-        const product = button.dataset.product;
-        showToast(`${product} agregado al pedido.`);
-        announce(`${product} agregado. Ahora tienes ${cartTotal} productos en el pedido.`);
-      });
-    });
-
-    /* Acordeones con estados ARIA */
-    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const panel = document.getElementById(trigger.getAttribute('aria-controls'));
-        const expanded = trigger.getAttribute('aria-expanded') === 'true';
-        trigger.setAttribute('aria-expanded', String(!expanded));
-        panel.hidden = expanded;
-      });
-    });
-
-    /* Modal accesible basado en dialog */
-    const infoModal = document.getElementById('infoModal');
-    const openInfoModal = document.getElementById('openInfoModal');
-    const closeInfoModal = document.getElementById('closeInfoModal');
-    const modalAccept = document.getElementById('modalAccept');
-
-    openInfoModal.addEventListener('click', () => {
-      infoModal.showModal();
-      closeInfoModal.focus();
-    });
-
-    function closeModal() {
-      infoModal.close();
-      openInfoModal.focus();
-    }
-
-    closeInfoModal.addEventListener('click', closeModal);
-    modalAccept.addEventListener('click', closeModal);
-    infoModal.addEventListener('click', event => {
-      const box = infoModal.getBoundingClientRect();
-      const isInside = event.clientX >= box.left && event.clientX <= box.right &&
-                       event.clientY >= box.top && event.clientY <= box.bottom;
-      if (!isInside) closeModal();
-    });
-
-    /* Formulario con errores vinculados y anunciados */
-    const form = document.getElementById('orderForm');
-    const formAlert = document.getElementById('formAlert');
-    const requiredFields = [...form.querySelectorAll('[required]')];
-    const errorMap = {
-      fullName: 'fullNameError',
-      phone: 'phoneError',
-      requestType: 'requestTypeError',
-      pizzaChoice: 'pizzaChoiceError',
-      preferredDate: 'dateError',
-      consent: 'consentError'
-    };
-
-    const dateInput = document.getElementById('preferredDate');
-    const today = new Date();
-    dateInput.min = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
-      .toISOString().split('T')[0];
-
-    function validateField(field) {
-      const error = document.getElementById(errorMap[field.id]);
-      if (!error) return field.checkValidity();
-      const invalid = !field.checkValidity();
-      field.setAttribute('aria-invalid', String(invalid));
-      error.classList.toggle('visible', invalid);
-      return !invalid;
-    }
-
-    requiredFields.forEach(field => {
-      field.addEventListener('blur', () => validateField(field));
-      field.addEventListener('change', () => validateField(field));
-    });
-
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      const invalidFields = requiredFields.filter(field => !validateField(field));
-
-      if (invalidFields.length) {
-        formAlert.classList.add('visible');
-        formAlert.focus();
-        announce(`El formulario contiene ${invalidFields.length} campos por corregir.`);
-        invalidFields[0].focus();
-        return;
-      }
-
-      formAlert.classList.remove('visible');
-      form.reset();
-      requiredFields.forEach(field => field.setAttribute('aria-invalid', 'false'));
-      showToast('Solicitud enviada correctamente. Confirmaremos tu pedido o reserva.');
-      announce('Solicitud enviada correctamente.');
-    });
-
-    /* Panel de accesibilidad complementario */
-    const a11yLauncher = document.getElementById('a11yLauncher');
-    const a11yPanel = document.getElementById('a11yPanel');
-    const closeA11y = document.getElementById('closeA11y');
-
-    function openA11yPanel() {
-      a11yPanel.hidden = false;
-      a11yLauncher.setAttribute('aria-expanded', 'true');
-      closeA11y.focus();
-    }
-
-    function closeA11yPanel() {
-      a11yPanel.hidden = true;
-      a11yLauncher.setAttribute('aria-expanded', 'false');
-      a11yLauncher.focus();
-    }
-
-    a11yLauncher.addEventListener('click', () => {
-      if (a11yPanel.hidden) openA11yPanel(); else closeA11yPanel();
-    });
-    closeA11y.addEventListener('click', closeA11yPanel);
-
-    document.querySelectorAll('[data-toggle]').forEach(button => {
-      button.addEventListener('click', () => {
-        const className = button.dataset.toggle;
-        const active = settings.classes.includes(className);
-        settings.classes = active
-          ? settings.classes.filter(item => item !== className)
-          : [...settings.classes, className];
-        applySettings();
-        announce(`${button.textContent.trim()} ${active ? 'desactivado' : 'activado'}.`);
-      });
-    });
-
-    document.querySelector('[data-theme-toggle]').addEventListener('click', () => {
-      settings.theme = settings.theme === 'dark' ? 'light' : 'dark';
-      applySettings();
-      announce(`Modo ${settings.theme === 'dark' ? 'oscuro' : 'claro'} activado.`);
-    });
-
-    function changeFont(delta) {
-      settings.fontScale = Math.max(90, Math.min(140, settings.fontScale + delta));
-      applySettings();
-      announce(`Tamaño de texto al ${settings.fontScale} por ciento.`);
-    }
-    document.getElementById('fontIncrease').addEventListener('click', () => changeFont(10));
-    document.getElementById('fontDecrease').addEventListener('click', () => changeFont(-10));
-    document.getElementById('fontReset').addEventListener('click', () => {
-      settings.fontScale = 100;
-      applySettings();
-      announce('Tamaño de texto restablecido.');
-    });
-
-    document.querySelectorAll('[data-profile]').forEach(button => {
-      button.addEventListener('click', () => {
-        const profiles = {
-          cognitive: ['readable-font', 'wide-spacing', 'pause-motion'],
-          lowVision: ['high-contrast', 'focus-strong', 'big-cursor'],
-          motor: ['focus-strong', 'big-cursor', 'pause-motion']
-        };
-        settings.classes = [...new Set([...settings.classes, ...profiles[button.dataset.profile]])];
-        if (button.dataset.profile === 'lowVision') settings.fontScale = 120;
-        applySettings();
-        announce(`${button.textContent.trim()} activado.`);
-      });
-    });
-
-    document.getElementById('resetAccessibility').addEventListener('click', () => {
-      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-      settings = { fontScale: 100, theme: 'light', classes: [] };
-      applySettings();
-      showToast('Ajustes de accesibilidad restablecidos.');
-    });
-
-    const readingGuide = document.getElementById('readingGuide');
-    document.addEventListener('pointermove', event => {
-      if (body.classList.contains('guide-enabled')) {
-        readingGuide.style.insetBlockStart = `${event.clientY + 12}px`;
-      }
-    });
-
-    const speakButton = document.getElementById('speakPage');
-    let speaking = false;
-    speakButton.addEventListener('click', () => {
-      if (!('speechSynthesis' in window)) {
-        showToast('La lectura en voz alta no está disponible en este navegador.');
-        return;
-      }
-
-      if (speaking) {
-        window.speechSynthesis.cancel();
-        speaking = false;
-        speakButton.setAttribute('aria-pressed', 'false');
-        announce('Lectura detenida.');
-        return;
-      }
-
-      const text = document.querySelector('main').innerText;
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'es-CO';
-      utterance.onend = () => {
-        speaking = false;
-        speakButton.setAttribute('aria-pressed', 'false');
-      };
-      speaking = true;
-      speakButton.setAttribute('aria-pressed', 'true');
-      window.speechSynthesis.speak(utterance);
-      announce('Lectura iniciada. Pulsa nuevamente para detener.');
-    });
-
-    document.getElementById('keyboardHelp').addEventListener('click', () => {
-      closeA11yPanel();
-      infoModal.showModal();
-      closeInfoModal.focus();
-    });
-
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') {
-        if (!a11yPanel.hidden) closeA11yPanel();
-        productsButton.setAttribute('aria-expanded', 'false');
-        productsMenu.hidden = true;
-        productsMenu.classList.remove('open');
-        closeMobileMenu();
-      }
-      if (event.altKey && event.key.toLowerCase() === 'a') {
-        event.preventDefault();
-        openA11yPanel();
-      }
-    });
-
-    loadSettings();
-  </script>
+  <!-- Lógica de comportamiento de la aplicación -->
+  <script src="js/app.js" defer></script>
 </body>
 </html>

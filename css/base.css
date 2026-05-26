@@ -1,0 +1,167 @@
+/* ============================================================
+   ESTILOS BASE, RESETS Y UTILIDADES GLOBALES
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 18rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: calc(clamp(1rem, .98rem + .15vw, 1.075rem) * var(--font-scale, 1));
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  word-spacing: var(--word-spacing);
+}
+
+/* Modificaciones de accesibilidad aplicadas al body o subcontenedores */
+body.pause-motion *,
+body.pause-motion *::before,
+body.pause-motion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+body.grayscale #page-content { filter: grayscale(100%); }
+body.hide-images .visual-image { display: none !important; }
+body.readable-font { font-family: "Trebuchet MS", Verdana, Arial, sans-serif; }
+body.wide-spacing {
+  --line-height: 1.95;
+  --letter-spacing: .06em;
+  --word-spacing: .17em;
+}
+body.big-cursor,
+body.big-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'%3E%3Cpath fill='%2321120c' stroke='%23ffffff' stroke-width='2' d='M3 2l28 23-13 1 8 13-7 3-7-14-9 10z'/%3E%3C/svg%3E") 3 2, auto !important;
+}
+body.focus-strong *:focus-visible {
+  outline-width: 5px;
+  outline-offset: 4px;
+}
+body.high-contrast {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-soft: #ffffff;
+  --color-accent-soft: #fff2a1;
+  --color-text: #000000;
+  --color-text-secondary: #000000;
+  --color-primary: #000000;
+  --color-primary-hover: #202020;
+  --color-secondary: #000000;
+  --color-border: #000000;
+  --color-focus: #005fcc;
+  --shadow: none;
+}
+html[data-theme="dark"] body.high-contrast {
+  --color-bg: #000000;
+  --color-surface: #000000;
+  --color-surface-soft: #000000;
+  --color-text: #ffffff;
+  --color-text-secondary: #ffffff;
+  --color-primary: #ffffff;
+  --color-primary-hover: #ececec;
+  --color-secondary: #ffffff;
+  --color-border: #ffffff;
+  --color-focus: #ffd046;
+}
+
+a {
+  color: var(--color-primary-hover);
+  text-underline-offset: .2em;
+  text-decoration-thickness: .13em;
+}
+html[data-theme="dark"] a { color: var(--color-primary); }
+a:hover { text-decoration-thickness: .19em; }
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: .25rem;
+}
+
+img, svg { max-width: 100%; height: auto; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+p { max-width: 68ch; }
+h1, h2, h3 { line-height: 1.13; text-wrap: balance; }
+h1 {
+  font-size: calc(clamp(2.35rem, 6vw, 4.8rem) * var(--font-scale, 1));
+  letter-spacing: -.045em;
+  margin: 0 0 1rem;
+}
+h2 {
+  font-size: calc(clamp(1.7rem, 3.6vw, 2.75rem) * var(--font-scale, 1));
+  letter-spacing: -.028em;
+  margin: 0 0 .75rem;
+}
+h3 { font-size: calc(clamp(1.16rem, 2vw, 1.36rem) * var(--font-scale, 1)); }
+
+/* Contenedor centralizado */
+.container {
+  inline-size: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+/* Enlaces de salto para accesibilidad por teclado */
+.skip-link {
+  position: absolute;
+  z-index: 10000;
+  inset-block-start: .5rem;
+  inset-inline-start: .5rem;
+  transform: translateY(-180%);
+  background: var(--color-focus);
+  color: #ffffff;
+  font-weight: 800;
+  padding: .8rem 1rem;
+  border-radius: var(--radius-sm);
+}
+.skip-link:focus { transform: translateY(0); }
+
+/* Elementos solo visibles para lectores de pantalla */
+.sr-only {
+  position: absolute !important;
+  inline-size: 1px !important;
+  block-size: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Iconos SVG */
+.svg-icon {
+  inline-size: 1.4rem;
+  block-size: 1.4rem;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Reducción de movimiento por defecto en el SO */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+/* Impresión */
+@media print {
+  header, .topbar, .a11y-launcher, .a11y-panel, .button-row,
+  .mini-button { display: none !important; }
+  body { background: #ffffff; color: #000000; }
+}

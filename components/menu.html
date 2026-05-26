@@ -1,0 +1,87 @@
+<section class="section-alt" id="menu" aria-labelledby="menu-title">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="menu-title">Favoritas de la casa</h2>
+      <p>Selecciona una pizza y agrégala al pedido; la actualización se anuncia accesiblemente.</p>
+    </div>
+
+    <div class="menu-cards">
+      <article class="pizza-card">
+        <div class="pizza-image visual-image">
+          <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Margarita con tomate, mozzarella y albahaca">
+            <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
+            <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
+            <circle cx="120" cy="81" r="66" fill="#D79A54"/>
+            <circle cx="120" cy="78" r="58" fill="#D6422A"/>
+            <g fill="#FFF8EE"><circle cx="87" cy="64" r="12"/><circle cx="137" cy="48" r="12"/><circle cx="157" cy="93" r="13"/><circle cx="101" cy="105" r="12"/></g>
+            <g fill="#38451B"><path d="M102 49c-18-17 14-27 23-8-5 10-13 12-23 8Z"/><path d="M129 83c-17-18 15-27 24-8-6 10-14 12-24 8Z"/><path d="M69 91c-18-18 14-29 23-9-5 10-13 12-23 9Z"/></g>
+          </svg>
+        </div>
+        <div class="pizza-card-content">
+          <h3>Margarita Original</h3>
+          <p>Mozzarella fresca, salsa pomodoro, albahaca y aceite de oliva.</p>
+          <div class="card-footer">
+            <span class="price">$29.900</span>
+            <button class="mini-button add-order" type="button" data-product="Margarita Original">
+              <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pizza-card">
+        <div class="pizza-image visual-image">
+          <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Pepperoni con queso y rodajas de pepperoni">
+            <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
+            <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
+            <circle cx="120" cy="81" r="66" fill="#D79A54"/>
+            <circle cx="120" cy="78" r="58" fill="#F2C14E"/>
+            <g fill="#8B1E12"><circle cx="91" cy="55" r="12"/><circle cx="138" cy="45" r="12"/><circle cx="158" cy="83" r="13"/><circle cx="111" cy="90" r="13"/><circle cx="82" cy="105" r="11"/><circle cx="140" cy="114" r="12"/></g>
+            <g fill="#F2C14E"><circle cx="88" cy="52" r="2.4"/><circle cx="136" cy="42" r="2.4"/><circle cx="155" cy="79" r="2.4"/><circle cx="108" cy="87" r="2.4"/></g>
+          </svg>
+        </div>
+        <div class="pizza-card-content">
+          <h3>Pepperoni Fuego</h3>
+          <p>Queso mozzarella, pepperoni dorado y toque de orégano artesanal.</p>
+          <div class="card-footer">
+            <span class="price">$34.900</span>
+            <button class="mini-button add-order" type="button" data-product="Pepperoni Fuego">
+              <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pizza-card">
+        <div class="pizza-image visual-image">
+          <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Huerta con vegetales, champiñones y pimentón">
+            <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
+            <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
+            <circle cx="120" cy="81" r="66" fill="#D79A54"/>
+            <circle cx="120" cy="78" r="58" fill="#F2C14E"/>
+            <g fill="#38451B"><path d="M85 51c-22-17 15-30 26-9-5 12-14 14-26 9Z"/><path d="M141 91c-20-18 16-31 28-10-6 13-15 15-28 10Z"/><path d="M79 102c-18-18 14-28 24-9-5 10-13 12-24 9Z"/></g>
+            <g fill="#D6422A"><path d="M116 39v28c12 2 17-7 15-15-2-8-7-12-15-13Z"/><path d="M158 55v28c12 2 17-7 15-15-2-8-7-12-15-13Z"/></g>
+            <g fill="#FFF8EE"><ellipse cx="116" cy="100" rx="14" ry="8"/><ellipse cx="141" cy="51" rx="13" ry="8"/></g>
+          </svg>
+        </div>
+        <div class="pizza-card-content">
+          <h3>Huerta Mediterránea</h3>
+          <p>Champiñones, pimentón asado, aceitunas, albahaca y mozzarella.</p>
+          <div class="card-footer">
+            <span class="price">$32.900</span>
+            <button class="mini-button add-order" type="button" data-product="Huerta Mediterránea">
+              <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="order-summary" role="status" aria-live="polite">
+      Productos agregados: <output id="cartCount">0</output>
+    </p>
+  </div>
+</section>

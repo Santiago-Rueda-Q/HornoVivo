@@ -1,0 +1,46 @@
+<button class="a11y-launcher" id="a11yLauncher" type="button"
+        aria-expanded="false" aria-controls="a11yPanel"
+        aria-label="Abrir herramientas de accesibilidad">
+  <svg class="svg-icon" aria-hidden="true"><use href="#icon-accessibility"></use></svg>
+</button>
+
+<aside class="a11y-panel" id="a11yPanel" aria-labelledby="a11yPanelTitle" hidden>
+  <div class="a11y-header">
+    <h2 id="a11yPanelTitle">Accesibilidad</h2>
+    <button class="icon-button" id="closeA11y" type="button" aria-label="Cerrar herramientas">
+      <svg class="svg-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+    </button>
+  </div>
+  <p class="hint">Personaliza la visualización y asistencia de lectura.</p>
+
+  <div class="text-size-row" aria-label="Cambiar tamaño del texto">
+    <button id="fontDecrease" type="button" aria-label="Reducir tamaño del texto">A−</button>
+    <button id="fontReset" type="button" aria-label="Restablecer tamaño del texto">A</button>
+    <button id="fontIncrease" type="button" aria-label="Aumentar tamaño del texto">A+</button>
+  </div>
+
+  <div class="a11y-controls" aria-label="Opciones visuales">
+    <button type="button" data-toggle="high-contrast" aria-pressed="false">Alto contraste</button>
+    <button type="button" data-theme-toggle aria-pressed="false">Modo oscuro</button>
+    <button type="button" data-toggle="grayscale" aria-pressed="false">Escala de grises</button>
+    <button type="button" data-toggle="pause-motion" aria-pressed="false">Pausar animación</button>
+    <button type="button" data-toggle="focus-strong" aria-pressed="false">Foco destacado</button>
+    <button type="button" data-toggle="guide-enabled" aria-pressed="false">Guía de lectura</button>
+    <button type="button" data-toggle="readable-font" aria-pressed="false">Fuente legible</button>
+    <button type="button" data-toggle="wide-spacing" aria-pressed="false">Espaciado</button>
+    <button type="button" data-toggle="hide-images" aria-pressed="false">Ocultar imágenes</button>
+    <button type="button" data-toggle="big-cursor" aria-pressed="false">Cursor grande</button>
+    <button type="button" id="speakPage" aria-pressed="false">Leer contenido</button>
+    <button type="button" id="keyboardHelp" aria-pressed="false">Atajos</button>
+  </div>
+
+  <div class="profile-buttons" aria-label="Perfiles rápidos">
+    <button type="button" data-profile="cognitive">Perfil cognitivo: lectura clara</button>
+    <button type="button" data-profile="lowVision">Perfil baja visión: contraste y tamaño</button>
+    <button type="button" data-profile="motor">Perfil motriz: foco y cursor</button>
+  </div>
+
+  <button class="reset-button" id="resetAccessibility" type="button">Restablecer ajustes</button>
+</aside>
+
+<div class="reading-guide" id="readingGuide" aria-hidden="true"></div>

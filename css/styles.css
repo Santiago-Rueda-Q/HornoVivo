@@ -1,0 +1,8 @@
+/* ============================================================
+   HOJA DE ESTILOS PRINCIPAL — CONSOLIDADOR
+   ============================================================ */
+@import './variables.css';
+@import './base.css';
+@import './components.css';
+@import './accessibility.css';
+@import './sections.css';

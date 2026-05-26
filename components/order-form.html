@@ -1,0 +1,98 @@
+<section id="pedido" aria-labelledby="order-title">
+  <div class="container two-columns">
+    <div>
+      <div class="section-heading">
+        <h2 id="order-title">Solicita tu pedido o reserva</h2>
+        <p>
+          Completa el formulario. Los campos marcados con
+          <span class="required" aria-hidden="true">*</span>
+          <span class="sr-only">asterisco</span> son obligatorios.
+        </p>
+      </div>
+      <p>
+        Confirmaremos disponibilidad y valor final por el canal elegido.
+        Para alergias alimentarias, informa tu requerimiento en el mensaje.
+      </p>
+    </div>
+
+    <form id="orderForm" novalidate aria-describedby="privacyNote">
+      <div id="formAlert" class="form-alert" role="alert" tabindex="-1">
+        Revisa los campos marcados antes de enviar tu solicitud.
+      </div>
+
+      <div class="fields">
+        <div class="field">
+          <label for="fullName">Nombre completo <span class="required" aria-hidden="true">*</span></label>
+          <input id="fullName" name="fullName" type="text" autocomplete="name" required aria-describedby="fullNameError">
+          <span class="field-error" id="fullNameError">Escribe tu nombre completo.</span>
+        </div>
+
+        <div class="field">
+          <label for="phone">Teléfono <span class="required" aria-hidden="true">*</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
+                 required pattern="[0-9\s\+\-\(\)]{7,20}" aria-describedby="phoneHint phoneError">
+          <span class="hint" id="phoneHint">Ejemplo: 312 510 8134.</span>
+          <span class="field-error" id="phoneError">Ingresa un teléfono válido.</span>
+        </div>
+
+        <div class="field">
+          <label for="requestType">Tipo de solicitud <span class="required" aria-hidden="true">*</span></label>
+          <select id="requestType" name="requestType" required aria-describedby="requestTypeError">
+            <option value="">Selecciona una opción</option>
+            <option>Pedido a domicilio</option>
+            <option>Recoger en el local</option>
+            <option>Reserva de mesa</option>
+          </select>
+          <span class="field-error" id="requestTypeError">Selecciona el tipo de solicitud.</span>
+        </div>
+
+        <div class="field">
+          <label for="pizzaChoice">Pizza preferida <span class="required" aria-hidden="true">*</span></label>
+          <select id="pizzaChoice" name="pizzaChoice" required aria-describedby="pizzaChoiceError">
+            <option value="">Selecciona una pizza</option>
+            <option>Margarita Original</option>
+            <option>Pepperoni Fuego</option>
+            <option>Huerta Mediterránea</option>
+          </select>
+          <span class="field-error" id="pizzaChoiceError">Selecciona una pizza.</span>
+        </div>
+
+        <div class="field">
+          <label for="preferredDate">Fecha preferida <span class="required" aria-hidden="true">*</span></label>
+          <input id="preferredDate" name="preferredDate" type="date" required aria-describedby="dateError">
+          <span class="field-error" id="dateError">Selecciona una fecha válida.</span>
+        </div>
+
+        <div class="field">
+          <label for="contactMethod">Canal de confirmación</label>
+          <select id="contactMethod" name="contactMethod">
+            <option>Llamada telefónica</option>
+            <option>WhatsApp</option>
+            <option>Correo electrónico</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="message">Indicaciones o alergias alimentarias</label>
+          <textarea id="message" name="message" maxlength="400" aria-describedby="messageHint"></textarea>
+          <span class="hint" id="messageHint">Máximo 400 caracteres. Informa alergias o necesidades de accesibilidad.</span>
+        </div>
+
+        <div class="field full">
+          <label>
+            <input id="consent" name="consent" type="checkbox" required aria-describedby="consentError">
+            Autorizo el contacto para gestionar mi pedido o reserva
+            <span class="required" aria-hidden="true">*</span>
+          </label>
+          <span class="field-error" id="consentError">Debes autorizar el contacto.</span>
+        </div>
+      </div>
+
+      <p class="hint" id="privacyNote">Tus datos se utilizarán solamente para atender esta solicitud.</p>
+      <button class="btn btn-primary" type="submit">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+        Enviar solicitud
+      </button>
+    </form>
+  </div>
+</section>

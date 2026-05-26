@@ -1,0 +1,14 @@
+{
+  "name": "horno-vivo",
+  "version": "1.0.0",
+  "description": "Horno Vivo Pizzería - Refactored static website with modular architecture",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

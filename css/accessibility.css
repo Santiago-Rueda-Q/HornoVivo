@@ -1,0 +1,144 @@
+/* ============================================================
+   ESTILOS COMPLEMENTARIOS DE ACCESIBILIDAD (PANEL Y RULER)
+   ============================================================ */
+
+/* Botón flotante lanzador */
+.a11y-launcher {
+  position: fixed;
+  z-index: 900;
+  inset-inline-end: 1rem;
+  inset-block-end: 1rem;
+  inline-size: 3.7rem;
+  block-size: 3.7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 3px solid var(--color-focus);
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow);
+}
+html[data-theme="dark"] .a11y-launcher { color: #21120c; }
+.a11y-launcher .svg-icon { inline-size: 1.9rem; block-size: 1.9rem; }
+
+/* Panel flotante de controles */
+.a11y-panel {
+  position: fixed;
+  z-index: 1000;
+  inset-inline-end: 1rem;
+  inset-block-end: 5.4rem;
+  inline-size: min(24rem, calc(100vw - 2rem));
+  max-block-size: min(77vh, 42rem);
+  overflow-y: auto;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+.a11y-panel[hidden] { display: none; }
+.a11y-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .7rem;
+  margin-block-end: .75rem;
+}
+.a11y-header h2 {
+  font-size: calc(1.28rem * var(--font-scale, 1));
+  margin: 0;
+}
+
+.a11y-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .56rem;
+}
+.a11y-controls button {
+  min-block-size: 3.35rem;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: .57rem;
+  padding: .46rem;
+  font-size: calc(.93rem * var(--font-scale, 1));
+  font-weight: 730;
+}
+.a11y-controls button[aria-pressed="true"] {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+html[data-theme="dark"] .a11y-controls button[aria-pressed="true"] { color: #21120c; }
+
+/* Perfiles de accesibilidad */
+.profile-buttons {
+  display: grid;
+  gap: .46rem;
+  margin-block: .87rem;
+}
+.profile-buttons button {
+  min-block-size: 3rem;
+  text-align: start;
+  background: var(--color-surface-soft);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  border-radius: .57rem;
+  padding: .56rem .72rem;
+  font-weight: 730;
+}
+
+/* Modificadores de fuente */
+.text-size-row {
+  display: flex;
+  gap: .46rem;
+  margin-block-end: .82rem;
+}
+.text-size-row button {
+  flex: 1;
+  min-block-size: 3rem;
+  border: 2px solid var(--color-border);
+  border-radius: .57rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  font-weight: 760;
+}
+
+/* Botón de reseteo */
+.reset-button {
+  inline-size: 100%;
+  min-block-size: 3rem;
+  margin-block-start: .77rem;
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: .57rem;
+  color: #ffffff;
+  font-weight: 760;
+}
+html[data-theme="dark"] .reset-button { color: #21120c; }
+
+/* Regla/Guía de lectura */
+.reading-guide {
+  display: none;
+  position: fixed;
+  pointer-events: none;
+  z-index: 850;
+  inset-inline: 0;
+  block-size: .34rem;
+  background: var(--color-focus);
+  box-shadow: 0 0 0 2px #ffffff;
+}
+body.guide-enabled .reading-guide { display: block; }
+
+/* Contenedor del compromiso de accesibilidad */
+.accessibility-statement {
+  border-inline-start: .42rem solid var(--color-primary);
+  padding: 1.18rem 1.22rem;
+  background: var(--color-surface);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.accessibility-statement a {
+  display: inline-block;
+  margin-block-start: .75rem;
+  font-weight: 760;
+}

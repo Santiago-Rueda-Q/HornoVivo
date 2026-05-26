@@ -1,0 +1,40 @@
+<header>
+  <div class="container nav-wrap">
+    <a class="brand" href="#inicio" aria-label="Horno Vivo Pizzería, ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="svg-icon"><use href="#icon-pizza"></use></svg>
+      </span>
+      <span>Horno Vivo</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button"
+            aria-expanded="false" aria-controls="mainNav"
+            aria-label="Abrir menú principal">
+      <svg class="svg-icon" aria-hidden="true"><use href="#icon-menu"></use></svg>
+    </button>
+
+    <nav class="primary-nav" id="mainNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio" aria-current="page">Inicio</a></li>
+        <li class="nav-dropdown">
+          <button id="productsButton" type="button" aria-expanded="false" aria-controls="productsMenu">
+            Nuestra carta
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+          </button>
+          <div class="dropdown-panel" id="productsMenu" hidden>
+            <a href="#menu">Pizzas artesanales</a>
+            <a href="#menu">Opciones vegetarianas</a>
+            <a href="#pedido">Arma tu pedido</a>
+          </div>
+        </li>
+        <li><a href="#historia">Experiencia</a></li>
+        <li><a href="#horarios">Horarios</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a class="nav-cta" href="#pedido">
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+          Pedir ahora
+        </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

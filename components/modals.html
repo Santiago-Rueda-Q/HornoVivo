@@ -1,0 +1,24 @@
+<dialog id="infoModal" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+  <div class="dialog-content">
+    <div class="dialog-head">
+      <div>
+        <h2 id="modalTitle">Accesibilidad en Horno Vivo</h2>
+        <p id="modalDescription">
+          Recorre la página con teclado, amplía el texto, activa alto contraste,
+          modo oscuro o guía de lectura desde el botón de accesibilidad.
+        </p>
+      </div>
+      <button class="icon-button" id="closeInfoModal" type="button" aria-label="Cerrar ventana">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+    </div>
+    <p>
+      Teclas útiles: <kbd>Tab</kbd> para avanzar, <kbd>Mayús + Tab</kbd> para retroceder,
+      <kbd>Esc</kbd> para cerrar y <kbd>Alt + A</kbd> para abrir herramientas de accesibilidad.
+    </p>
+    <button class="btn btn-primary" id="modalAccept" type="button">Entendido</button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+<div class="sr-only" id="liveRegion" aria-live="polite" aria-atomic="true"></div>
