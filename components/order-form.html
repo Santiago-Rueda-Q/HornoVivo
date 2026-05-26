@@ -57,8 +57,8 @@
           <span class="field-error" id="pizzaChoiceError">Selecciona una pizza.</span>
         </div>
 
-        <div class="field full" id="selectedPizzasField" style="display: none;">
-          <label>Pizzas seleccionadas en tu pedido</label>
+        <div class="field full" id="selectedPizzasField" style="display: none;" role="group" aria-labelledby="selectedPizzasLabel">
+          <p id="selectedPizzasLabel" class="label-like">Pizzas seleccionadas en tu pedido</p>
           <div id="selectedPizzasList" style="padding: 0.8rem 1.1rem; border: 2px solid var(--color-border); border-radius: .57rem; background: var(--color-surface-soft); display: flex; flex-direction: column; gap: .4rem;">
             <!-- Se carga dinámicamente desde el JS del carrito -->
           </div>

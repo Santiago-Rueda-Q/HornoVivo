@@ -71,7 +71,7 @@
   <a class="skip-link" href="#pedido">Saltar a realizar pedido</a>
 
   <div id="page-content">
-    <div class="topbar" aria-label="Información rápida del restaurante">
+    <aside class="topbar" aria-label="Información rápida del restaurante">
   <div class="container">
     <span>Pizza artesanal al horno de piedra · Entregas y reservas</span>
     <span>
@@ -82,7 +82,7 @@
       &nbsp;|&nbsp; Abierto hoy: 12:00 m. – 10:00 p. m.
     </span>
   </div>
-</div>
+</aside>
 
     <header>
   <div class="container nav-wrap">
@@ -215,7 +215,8 @@
     <div class="menu-cards">
       <article class="pizza-card">
         <div class="pizza-image visual-image">
-          <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Margarita con tomate, mozzarella y albahaca">
+          <svg viewBox="0 0 240 170" role="img" aria-labelledby="pizza-margarita-title">
+            <title id="pizza-margarita-title">Pizza Margarita con tomate, mozzarella y albahaca</title>
             <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
             <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
             <circle cx="120" cy="81" r="66" fill="#D79A54"/>
@@ -239,7 +240,8 @@
 
       <article class="pizza-card">
         <div class="pizza-image visual-image">
-          <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Pepperoni con queso y rodajas de pepperoni">
+          <svg viewBox="0 0 240 170" role="img" aria-labelledby="pizza-pepperoni-title">
+            <title id="pizza-pepperoni-title">Pizza Pepperoni con queso y rodajas de pepperoni</title>
             <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
             <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
             <circle cx="120" cy="81" r="66" fill="#D79A54"/>
@@ -263,7 +265,8 @@
 
       <article class="pizza-card">
         <div class="pizza-image visual-image">
-          <svg viewBox="0 0 240 170" role="img" aria-label="Pizza Huerta con vegetales, champiñones y pimentón">
+          <svg viewBox="0 0 240 170" role="img" aria-labelledby="pizza-huerta-title">
+            <title id="pizza-huerta-title">Pizza Huerta con vegetales, champiñones y pimentón</title>
             <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
             <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
             <circle cx="120" cy="81" r="66" fill="#D79A54"/>
@@ -321,7 +324,8 @@
 
     <div class="gallery" aria-label="Galería ilustrada del restaurante">
       <figure class="visual-image">
-        <svg viewBox="0 0 500 210" role="img" aria-label="Interior cálido de Horno Vivo con mesas y horno">
+        <svg viewBox="0 0 500 210" role="img" aria-labelledby="historia-salon-title">
+          <title id="historia-salon-title">Interior cálido de Horno Vivo con mesas y horno</title>
           <rect width="500" height="210" rx="18" fill="#F9EDDA"/>
           <path d="M335 40h108v116H335z" fill="#8B1E12"/>
           <path d="M355 156V95c0-30 69-30 69 0v61Z" fill="#21120C"/>
@@ -336,7 +340,8 @@
         <figcaption>Salón accesible y acogedor</figcaption>
       </figure>
       <figure class="visual-image">
-        <svg viewBox="0 0 220 155" role="img" aria-label="Ingredientes frescos: tomate y albahaca">
+        <svg viewBox="0 0 220 155" role="img" aria-labelledby="historia-ingredientes-title">
+          <title id="historia-ingredientes-title">Ingredientes frescos: tomate y albahaca</title>
           <rect width="220" height="155" rx="16" fill="#FFE6AD"/>
           <circle cx="78" cy="88" r="34" fill="#D6422A"/>
           <path d="M78 52c-10-17-23-15-26-8 10-2 17 2 26 8 10-7 18-10 29-7-5-9-17-11-29 7Z" fill="#38451B"/>
@@ -345,7 +350,8 @@
         <figcaption>Ingredientes seleccionados</figcaption>
       </figure>
       <figure class="visual-image">
-        <svg viewBox="0 0 220 155" role="img" aria-label="Caja de pizza para entrega a domicilio">
+        <svg viewBox="0 0 220 155" role="img" aria-labelledby="historia-domicilio-title">
+          <title id="historia-domicilio-title">Caja de pizza para entrega a domicilio</title>
           <rect width="220" height="155" rx="16" fill="#FFE6AD"/>
           <path d="M38 66 72 39h95l19 27-25 52H57Z" fill="#C78455"/>
           <path d="M38 66h148l-17 18H55Z" fill="#F9EDDA"/>
@@ -460,8 +466,8 @@
           <span class="field-error" id="pizzaChoiceError">Selecciona una pizza.</span>
         </div>
 
-        <div class="field full" id="selectedPizzasField" style="display: none;">
-          <label>Pizzas seleccionadas en tu pedido</label>
+        <div class="field full" id="selectedPizzasField" style="display: none;" role="group" aria-labelledby="selectedPizzasLabel">
+          <p id="selectedPizzasLabel" class="label-like">Pizzas seleccionadas en tu pedido</p>
           <div id="selectedPizzasList" style="padding: 0.8rem 1.1rem; border: 2px solid var(--color-border); border-radius: .57rem; background: var(--color-surface-soft); display: flex; flex-direction: column; gap: .4rem;">
             <!-- Se carga dinámicamente desde el JS del carrito -->
           </div>
