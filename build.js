@@ -3,8 +3,7 @@ const path = require('path');
 
 const TEMPLATE_FILE = path.join(__dirname, 'template.html');
 const COMPONENTS_DIR = path.join(__dirname, 'components');
-const DIST_DIR = path.join(__dirname, 'dist');
-const OUTPUT_FILE = path.join(DIST_DIR, 'index.html');
+const OUTPUT_FILE = path.join(__dirname, 'index.html');
 
 function minifyHTML(html) {
   return html
@@ -14,7 +13,7 @@ function minifyHTML(html) {
     .trim();
 }
 
-function compile() {
+function compile(isProd = false) {
   console.log('Compilando componentes...');
   try {
     if (!fs.existsSync(TEMPLATE_FILE)) {
@@ -38,26 +37,28 @@ function compile() {
       }
     });
     
-    result = minifyHTML(result);
-    
-    // Crear directorio dist si no existe
-    if (!fs.existsSync(DIST_DIR)) {
-      fs.mkdirSync(DIST_DIR);
+    if (isProd) {
+      result = minifyHTML(result);
+      fs.writeFileSync(OUTPUT_FILE, result, 'utf8');
+      console.log(`¡Compilación exitosa (PROD - MINIFICADO)! index.html generado en: ${OUTPUT_FILE}\n`);
+    } else {
+      fs.writeFileSync(OUTPUT_FILE, result, 'utf8');
+      console.log(`¡Compilación exitosa (DEV - LIMPIO)! index.html generado en: ${OUTPUT_FILE}\n`);
     }
     
-    fs.writeFileSync(OUTPUT_FILE, result, 'utf8');
-    console.log(`¡Compilación exitosa! index.html generado en: ${OUTPUT_FILE}\n`);
   } catch (error) {
     console.error('Error durante la compilación:', error);
   }
 }
 
-// Analizar argumentos
+// Analizar argumentos y entorno
 const args = process.argv.slice(2);
 const isWatch = args.includes('--watch');
+const isVercel = process.env.VERCEL === '1';
+const isProd = args.includes('--minify') || args.includes('--prod') || isVercel;
 
 // Compilación inicial
-compile();
+compile(isProd);
 
 if (isWatch) {
   console.log('Modo de escucha activo. Monitoreando cambios en plantilla y componentes...');
@@ -67,7 +68,7 @@ if (isWatch) {
     fs.watch(COMPONENTS_DIR, { recursive: true }, (eventType, filename) => {
       if (filename) {
         console.log(`Cambio detectado en componente: ${filename}`);
-        compile();
+        compile(isProd);
       }
     });
   } catch (e) {
@@ -75,7 +76,7 @@ if (isWatch) {
     fs.watch(COMPONENTS_DIR, (eventType, filename) => {
       if (filename) {
         console.log(`Cambio detectado en componentes: ${filename}`);
-        compile();
+        compile(isProd);
       }
     });
   }
@@ -83,6 +84,6 @@ if (isWatch) {
   // Observar template.html
   fs.watch(TEMPLATE_FILE, (eventType, filename) => {
     console.log('Cambio detectado en plantilla base (template.html)');
-    compile();
+    compile(isProd);
   });
 }

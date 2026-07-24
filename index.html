@@ -5,69 +5,726 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Horno Vivo Pizzería: pizzas artesanales al horno, ingredientes frescos, reservas y pedidos en una experiencia web accesible.">
   <meta name="theme-color" content="#8b1e12">
-  <title>Pizzería artesanal accesible</title>
+  <title>Horno Vivo | Pizzería artesanal accesible</title>
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <div data-include="components/svg-library.html"></div>
+<svg class="sr-only" aria-hidden="true" focusable="false">
+  <symbol id="icon-pizza" viewBox="0 0 24 24">
+    <path d="M3 5c6-2 12-2 18 0L12 21L3 5Z"></path>
+    <circle cx="12" cy="9" r="1.5"></circle>
+    <circle cx="8.5" cy="13" r="1.2"></circle>
+    <circle cx="15.5" cy="13" r="1.2"></circle>
+    <circle cx="12" cy="16.5" r="1"></circle>
+  </symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"></path>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24">
+    <path d="M6 6l12 12M18 6L6 18"></path>
+  </symbol>
+  <symbol id="icon-chevron" viewBox="0 0 24 24">
+    <path d="m6 9 6 6 6-6"></path>
+  </symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M20 6 9 17l-5-5"></path>
+  </symbol>
+  <symbol id="icon-cart" viewBox="0 0 24 24">
+    <path d="M3 4h2l2.5 11h10.5l2-8H7"></path>
+    <circle cx="9" cy="20" r="1"></circle>
+    <circle cx="17" cy="20" r="1"></circle>
+  </symbol>
+  <symbol id="icon-calendar" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+    <path d="M8 3v4M16 3v4M3 10h18"></path>
+  </symbol>
+  <symbol id="icon-accessibility" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"></circle>
+    <circle cx="12" cy="6.5" r="1.5"></circle>
+    <path d="M6 10.5c3-1 9-1 12 0M12 8v6.5m-3 5.5l3-5.5 3 5.5"></path>
+  </symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24">
+    <path d="M5 4h4l2 5-2.5 2a14 14 0 0 0 4.5 4.5L15 13l5 2v4c-9 2-17-6-15-15Z"></path>
+  </symbol>
+  <symbol id="icon-leaf" viewBox="0 0 24 24">
+    <path d="M20 4C9 4 4 9 4 20 15 20 20 15 20 4Z"></path>
+    <path d="M4 20 15 9"></path>
+  </symbol>
+  <symbol id="icon-flame" viewBox="0 0 24 24">
+    <path d="M12 22c5 0 8-3.5 8-8 0-5-4-7-5-11-4 2-5 6-5 8-2-1-3-3-3-4-2 2-3 5-3 8 0 4 3 7 8 7Z"></path>
+    <path d="M12 22c2 0 3.5-1.5 3.5-3.5 0-2-1.5-3.1-2.5-4.5-2 1-3 2.8-3 4.5 0 2 1 3.5 2 3.5Z"></path>
+  </symbol>
+  <symbol id="icon-plus" viewBox="0 0 24 24">
+    <path d="M12 5v14M5 12h14"></path>
+  </symbol>
+  <symbol id="icon-minus" viewBox="0 0 24 24">
+    <path d="M5 12h14"></path>
+  </symbol>
+</svg>
+
 
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
   <a class="skip-link" href="#pedido">Saltar a realizar pedido</a>
 
   <div id="page-content">
-    <div data-include="components/topbar.html"></div>
-    <div data-include="components/header.html"></div>
+<aside class="topbar" aria-label="Información rápida del restaurante">
+  <div class="container">
+    <span>Pizza artesanal al horno de piedra · Entregas y reservas</span>
+    <span>
+      <a href="https://wa.me/573125108134" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Horno Vivo, 312 510 8134">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
+        312 510 8134
+      </a>
+      &nbsp;|&nbsp; Abierto hoy: 12:00 m. – 10:00 p. m.
+    </span>
+  </div>
+</aside>
+
+<header>
+  <div class="container nav-wrap">
+    <a class="brand" href="#inicio" aria-label="Horno Vivo Pizzería, ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="svg-icon"><use href="#icon-pizza"></use></svg>
+      </span>
+      <span>Horno Vivo</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button"
+            aria-expanded="false" aria-controls="mainNav"
+            aria-label="Abrir menú principal">
+      <svg class="svg-icon" aria-hidden="true"><use href="#icon-menu"></use></svg>
+    </button>
+
+    <nav class="primary-nav" id="mainNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio" aria-current="page">Inicio</a></li>
+        <li class="nav-dropdown">
+          <button id="productsButton" type="button" aria-expanded="false" aria-controls="productsMenu">
+            Nuestra carta
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+          </button>
+          <div class="dropdown-panel" id="productsMenu" hidden>
+            <a href="#menu">Pizzas artesanales</a>
+            <a href="#menu">Opciones vegetarianas</a>
+            <a href="#pedido">Arma tu pedido</a>
+          </div>
+        </li>
+        <li><a href="#historia">Experiencia</a></li>
+        <li><a href="#horarios">Horarios</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a class="nav-cta" href="#pedido">
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+          Pedir ahora
+        </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
     <main id="contenido" tabindex="-1">
-      <div class="container breadcrumbs">
-        <nav aria-label="Ruta de navegación">
-          <ol>
-            <li><a href="#inicio">Inicio</a></li>
-            <li aria-current="page">Pizzería artesanal</li>
-          </ol>
-        </nav>
+<div class="container breadcrumbs">
+  <nav aria-label="Ruta de navegación">
+    <ol>
+      <li><a href="#inicio">Inicio</a></li>
+      <li aria-current="page">Pizzería artesanal</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-flame"></use></svg>
+        Horneada al momento
+      </span>
+      <h1 id="hero-title">Pizza artesanal, sabor que reúne</h1>
+      <p class="lead">
+        Masa de fermentación lenta, salsa de tomate natural e ingredientes frescos.
+        Disfruta una experiencia cálida, rápida y accesible para todas las personas.
+      </p>
+      <div class="button-row">
+        <a class="btn btn-primary" href="#menu">
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-pizza"></use></svg>
+          Ver la carta
+        </a>
+        <button class="btn btn-secondary" id="openInfoModal" type="button">
+          Accesibilidad del sitio
+        </button>
+      </div>
+      <ul class="trust-list" aria-label="Características del restaurante">
+        <li><svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Ingredientes frescos</li>
+        <li><svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Opción vegetariana</li>
+        <li><svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Entrega a domicilio</li>
+      </ul>
+    </div>
+
+    <figure class="hero-visual visual-image">
+      <svg viewBox="0 0 600 500" role="img" aria-labelledby="heroSvgTitle heroSvgDesc" width="600" height="500">
+        <title id="heroSvgTitle">Pizza artesanal recién horneada</title>
+        <desc id="heroSvgDesc">Ilustración de una pizza con tomates, albahaca y queso sobre una mesa cálida junto a un horno.</desc>
+        <rect width="600" height="500" rx="32" fill="#F9EDDA"/>
+        <circle cx="474" cy="104" r="63" fill="#F2C14E"/>
+        <path d="M404 232c0-83 55-136 126-136v204H404Z" fill="#8B1E12"/>
+        <path d="M429 232c0-59 38-97 77-103v103h-77Z" fill="#21120C"/>
+        <path d="M0 365h600v135H0z" fill="#C78455"/>
+        <ellipse cx="245" cy="405" rx="196" ry="28" fill="#A7603E" opacity=".55"/>
+        <ellipse cx="245" cy="350" rx="175" ry="94" fill="#D99A56"/>
+        <ellipse cx="245" cy="339" rx="157" ry="82" fill="#D43C24"/>
+        <path d="M101 340c16-73 274-91 300-6-19 84-278 100-300 6Z" fill="#F2C14E" opacity=".86"/>
+        <g fill="#8B1E12">
+          <circle cx="172" cy="314" r="19"/><circle cx="272" cy="300" r="21"/>
+          <circle cx="324" cy="351" r="18"/><circle cx="214" cy="367" r="21"/>
+          <circle cx="362" cy="316" r="16"/><circle cx="139" cy="350" r="15"/>
+        </g>
+        <g fill="#38451B">
+          <path d="M201 326c-21-24 17-38 30-11-5 15-15 18-30 11Z"/>
+          <path d="M291 370c-20-27 21-38 31-9-8 14-18 17-31 9Z"/>
+          <path d="M241 291c-12-27 30-29 32-2-10 11-20 13-32 2Z"/>
+        </g>
+        <g fill="#FFF7E5">
+          <ellipse cx="236" cy="333" rx="16" ry="9"/><ellipse cx="304" cy="318" rx="17" ry="9"/>
+          <ellipse cx="174" cy="344" rx="14" ry="8"/><ellipse cx="267" cy="356" rx="12" ry="7"/>
+        </g>
+        <path d="M47 175h114v134H47z" fill="#FFFFFF"/>
+        <rect x="58" y="187" width="92" height="62" rx="9" fill="#FFE6AD"/>
+        <path d="M102 199 77 238h50l-25-39Z" fill="#8B1E12"/>
+        <circle cx="101" cy="220" r="4" fill="#F2C14E"/>
+        <path d="M64 269h82M64 285h58" stroke="#38451B" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      <figcaption class="hero-badge">
+        <strong>Desde $24.900</strong>
+        Pizzas personales recién horneadas
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section-alt" id="menu" aria-labelledby="menu-title">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="menu-title">Favoritas de la casa</h2>
+      <p>Selecciona una pizza y agrégala al pedido; la actualización se anuncia accesiblemente.</p>
+    </div>
+
+    <div class="menu-cards">
+      <article class="pizza-card">
+        <div class="pizza-image visual-image">
+          <svg viewBox="0 0 240 170" role="img" aria-labelledby="pizza-margarita-title">
+            <title id="pizza-margarita-title">Pizza Margarita con tomate, mozzarella y albahaca</title>
+            <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
+            <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
+            <circle cx="120" cy="81" r="66" fill="#D79A54"/>
+            <circle cx="120" cy="78" r="58" fill="#D6422A"/>
+            <g fill="#FFF8EE"><circle cx="87" cy="64" r="12"/><circle cx="137" cy="48" r="12"/><circle cx="157" cy="93" r="13"/><circle cx="101" cy="105" r="12"/></g>
+            <g fill="#38451B"><path d="M102 49c-18-17 14-27 23-8-5 10-13 12-23 8Z"/><path d="M129 83c-17-18 15-27 24-8-6 10-14 12-24 8Z"/><path d="M69 91c-18-18 14-29 23-9-5 10-13 12-23 9Z"/></g>
+          </svg>
+        </div>
+        <div class="pizza-card-content">
+          <h3>Margarita Original</h3>
+          <p>Mozzarella fresca, salsa pomodoro, albahaca y aceite de oliva.</p>
+          <div class="card-footer">
+            <span class="price">$29.900</span>
+            <button class="mini-button add-order" type="button" data-product="Margarita Original">
+              <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pizza-card">
+        <div class="pizza-image visual-image">
+          <svg viewBox="0 0 240 170" role="img" aria-labelledby="pizza-pepperoni-title">
+            <title id="pizza-pepperoni-title">Pizza Pepperoni con queso y rodajas de pepperoni</title>
+            <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
+            <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
+            <circle cx="120" cy="81" r="66" fill="#D79A54"/>
+            <circle cx="120" cy="78" r="58" fill="#F2C14E"/>
+            <g fill="#8B1E12"><circle cx="91" cy="55" r="12"/><circle cx="138" cy="45" r="12"/><circle cx="158" cy="83" r="13"/><circle cx="111" cy="90" r="13"/><circle cx="82" cy="105" r="11"/><circle cx="140" cy="114" r="12"/></g>
+            <g fill="#F2C14E"><circle cx="88" cy="52" r="2.4"/><circle cx="136" cy="42" r="2.4"/><circle cx="155" cy="79" r="2.4"/><circle cx="108" cy="87" r="2.4"/></g>
+          </svg>
+        </div>
+        <div class="pizza-card-content">
+          <h3>Pepperoni Fuego</h3>
+          <p>Queso mozzarella, pepperoni dorado y toque de orégano artesanal.</p>
+          <div class="card-footer">
+            <span class="price">$34.900</span>
+            <button class="mini-button add-order" type="button" data-product="Pepperoni Fuego">
+              <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="pizza-card">
+        <div class="pizza-image visual-image">
+          <svg viewBox="0 0 240 170" role="img" aria-labelledby="pizza-huerta-title">
+            <title id="pizza-huerta-title">Pizza Huerta con vegetales, champiñones y pimentón</title>
+            <rect width="240" height="170" rx="18" fill="#FFE6AD"/>
+            <ellipse cx="120" cy="142" rx="78" ry="10" fill="#D6A35B"/>
+            <circle cx="120" cy="81" r="66" fill="#D79A54"/>
+            <circle cx="120" cy="78" r="58" fill="#F2C14E"/>
+            <g fill="#38451B"><path d="M85 51c-22-17 15-30 26-9-5 12-14 14-26 9Z"/><path d="M141 91c-20-18 16-31 28-10-6 13-15 15-28 10Z"/><path d="M79 102c-18-18 14-28 24-9-5 10-13 12-24 9Z"/></g>
+            <g fill="#D6422A"><path d="M116 39v28c12 2 17-7 15-15-2-8-7-12-15-13Z"/><path d="M158 55v28c12 2 17-7 15-15-2-8-7-12-15-13Z"/></g>
+            <g fill="#FFF8EE"><ellipse cx="116" cy="100" rx="14" ry="8"/><ellipse cx="141" cy="51" rx="13" ry="8"/></g>
+          </svg>
+        </div>
+        <div class="pizza-card-content">
+          <h3>Huerta Mediterránea</h3>
+          <p>Champiñones, pimentón asado, aceitunas, albahaca y mozzarella.</p>
+          <div class="card-footer">
+            <span class="price">$32.900</span>
+            <button class="mini-button add-order" type="button" data-product="Huerta Mediterránea">
+              <svg class="svg-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="order-summary-container">
+      <p class="order-summary" role="status" aria-live="polite">
+        Productos agregados: <output id="cartCount">0</output>
+      </p>
+      <div id="cartItemsList" class="cart-items-list" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="historia" aria-labelledby="story-title">
+  <div class="container two-columns">
+    <div>
+      <div class="section-heading">
+        <h2 id="story-title">Horno, mesa y tradición</h2>
+        <p>Una experiencia pensada para disfrutar con calma y pedir con facilidad.</p>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-flame"></use></svg>
+          <span>Horno de piedra con cocción uniforme y masa fermentada por 48 horas.</span>
+        </li>
+        <li>
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-leaf"></use></svg>
+          <span>Ingredientes identificados claramente y opciones vegetarianas disponibles.</span>
+        </li>
+        <li>
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-accessibility"></use></svg>
+          <span>Local y sitio web diseñados para una experiencia accesible e inclusiva.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="gallery" aria-label="Galería ilustrada del restaurante">
+      <figure class="visual-image">
+        <svg viewBox="0 0 500 210" role="img" aria-labelledby="historia-salon-title">
+          <title id="historia-salon-title">Interior cálido de Horno Vivo con mesas y horno</title>
+          <rect width="500" height="210" rx="18" fill="#F9EDDA"/>
+          <path d="M335 40h108v116H335z" fill="#8B1E12"/>
+          <path d="M355 156V95c0-30 69-30 69 0v61Z" fill="#21120C"/>
+          <rect x="0" y="156" width="500" height="54" fill="#C78455"/>
+          <rect x="72" y="101" width="133" height="10" rx="5" fill="#8B1E12"/>
+          <path d="M92 111v53M185 111v53" stroke="#38451B" stroke-width="7"/>
+          <rect x="245" y="107" width="72" height="9" rx="4" fill="#8B1E12"/>
+          <path d="M255 116v45M307 116v45" stroke="#38451B" stroke-width="6"/>
+          <path d="M22 40h152" stroke="#38451B" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="74" cy="69" r="18" fill="#F2C14E"/><circle cx="126" cy="69" r="18" fill="#F2C14E"/>
+        </svg>
+        <figcaption>Salón accesible y acogedor</figcaption>
+      </figure>
+      <figure class="visual-image">
+        <svg viewBox="0 0 220 155" role="img" aria-labelledby="historia-ingredientes-title">
+          <title id="historia-ingredientes-title">Ingredientes frescos: tomate y albahaca</title>
+          <rect width="220" height="155" rx="16" fill="#FFE6AD"/>
+          <circle cx="78" cy="88" r="34" fill="#D6422A"/>
+          <path d="M78 52c-10-17-23-15-26-8 10-2 17 2 26 8 10-7 18-10 29-7-5-9-17-11-29 7Z" fill="#38451B"/>
+          <path d="M129 109c-27-31 22-52 39-17-8 21-21 24-39 17Z" fill="#38451B"/>
+        </svg>
+        <figcaption>Ingredientes seleccionados</figcaption>
+      </figure>
+      <figure class="visual-image">
+        <svg viewBox="0 0 220 155" role="img" aria-labelledby="historia-domicilio-title">
+          <title id="historia-domicilio-title">Caja de pizza para entrega a domicilio</title>
+          <rect width="220" height="155" rx="16" fill="#FFE6AD"/>
+          <path d="M38 66 72 39h95l19 27-25 52H57Z" fill="#C78455"/>
+          <path d="M38 66h148l-17 18H55Z" fill="#F9EDDA"/>
+          <circle cx="112" cy="93" r="18" fill="#8B1E12"/>
+          <path d="M104 101 112 84l8 17Z" fill="#F2C14E"/>
+        </svg>
+        <figcaption>Empaque para domicilio</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="horarios" aria-labelledby="hours-title">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="hours-title">Horarios y servicios</h2>
+      <p>Consulta disponibilidad para salón, recogida y domicilio.</p>
+    </div>
+
+    <div class="table-scroll" tabindex="0" aria-label="Tabla de horarios, desplazable horizontalmente en pantallas pequeñas">
+      <table>
+        <caption>Atención semanal de Horno Vivo</caption>
+        <thead>
+          <tr>
+            <th scope="col">Servicio</th>
+            <th scope="col">Lunes a jueves</th>
+            <th scope="col">Viernes y sábado</th>
+            <th scope="col">Domingo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Comer en el salón</th>
+            <td>12:00 m. – 9:30 p. m.</td>
+            <td>12:00 m. – 10:30 p. m.</td>
+            <td>12:00 m. – 8:30 p. m.</td>
+          </tr>
+          <tr>
+            <th scope="row">Recoger pedido</th>
+            <td>12:00 m. – 9:00 p. m.</td>
+            <td>12:00 m. – 10:00 p. m.</td>
+            <td>12:00 m. – 8:00 p. m.</td>
+          </tr>
+          <tr>
+            <th scope="row">Domicilio</th>
+            <td>12:00 m. – 8:45 p. m.</td>
+            <td>12:00 m. – 9:45 p. m.</td>
+            <td>12:00 m. – 7:45 p. m.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="pedido" aria-labelledby="order-title">
+  <div class="container two-columns">
+    <div>
+      <div class="section-heading">
+        <h2 id="order-title">Solicita tu pedido o reserva</h2>
+        <p>
+          Completa el formulario. Los campos marcados con
+          <span class="required" aria-hidden="true">*</span>
+          <span class="sr-only">asterisco</span> son obligatorios.
+        </p>
+      </div>
+      <p>
+        Confirmaremos disponibilidad y valor final por el canal elegido.
+        Para alergias alimentarias, informa tu requerimiento en el mensaje.
+      </p>
+    </div>
+
+    <form id="orderForm" novalidate aria-describedby="privacyNote">
+      <div id="formAlert" class="form-alert" role="alert" tabindex="-1">
+        Revisa los campos marcados antes de enviar tu solicitud.
       </div>
 
-      <div data-include="components/hero.html"></div>
-      <div data-include="components/menu.html"></div>
-      <div data-include="components/history.html"></div>
-      <div data-include="components/hours.html"></div>
-      <div data-include="components/order-form.html"></div>
-      <div data-include="components/faq.html"></div>
-      <div data-include="components/accessibility.html"></div>
+      <div class="fields">
+        <div class="field">
+          <label for="fullName">Nombre completo <span class="required" aria-hidden="true">*</span></label>
+          <input id="fullName" name="fullName" type="text" autocomplete="name" required aria-describedby="fullNameError">
+          <span class="field-error" id="fullNameError">Escribe tu nombre completo.</span>
+        </div>
+
+        <div class="field">
+          <label for="phone">Teléfono <span class="required" aria-hidden="true">*</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
+                 required pattern="[0-9\s\+\-\(\)]{7,20}" aria-describedby="phoneHint phoneError">
+          <span class="hint" id="phoneHint">Ejemplo: 312 510 8134.</span>
+          <span class="field-error" id="phoneError">Ingresa un teléfono válido.</span>
+        </div>
+
+        <div class="field">
+          <label for="requestType">Tipo de solicitud <span class="required" aria-hidden="true">*</span></label>
+          <select id="requestType" name="requestType" required aria-describedby="requestTypeError">
+            <option value="">Selecciona una opción</option>
+            <option>Pedido a domicilio</option>
+            <option>Recoger en el local</option>
+            <option>Reserva de mesa</option>
+          </select>
+          <span class="field-error" id="requestTypeError">Selecciona el tipo de solicitud.</span>
+        </div>
+
+        <div class="field" id="pizzaChoiceField">
+          <label for="pizzaChoice">Pizza preferida <span class="required" aria-hidden="true">*</span></label>
+          <select id="pizzaChoice" name="pizzaChoice" required aria-describedby="pizzaChoiceError">
+            <option value="">Selecciona una pizza</option>
+            <option>Margarita Original</option>
+            <option>Pepperoni Fuego</option>
+            <option>Huerta Mediterránea</option>
+          </select>
+          <span class="field-error" id="pizzaChoiceError">Selecciona una pizza.</span>
+        </div>
+
+        <div class="field full" id="selectedPizzasField" style="display: none;" role="group" aria-labelledby="selectedPizzasLabel">
+          <p id="selectedPizzasLabel" class="label-like">Pizzas seleccionadas en tu pedido</p>
+          <div id="selectedPizzasList" style="padding: 0.8rem 1.1rem; border: 2px solid var(--color-border); border-radius: .57rem; background: var(--color-surface-soft); display: flex; flex-direction: column; gap: .4rem;">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="preferredDate">Fecha preferida <span class="required" aria-hidden="true">*</span></label>
+          <input id="preferredDate" name="preferredDate" type="date" required aria-describedby="dateError">
+          <span class="field-error" id="dateError">Selecciona una fecha válida.</span>
+        </div>
+
+        <div class="field">
+          <label for="contactMethod">Canal de confirmación</label>
+          <select id="contactMethod" name="contactMethod">
+            <option>Llamada telefónica</option>
+            <option>WhatsApp</option>
+            <option>Correo electrónico</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="message">Indicaciones o alergias alimentarias</label>
+          <textarea id="message" name="message" maxlength="400" aria-describedby="messageHint"></textarea>
+          <span class="hint" id="messageHint">Máximo 400 caracteres. Informa alergias o necesidades de accesibilidad.</span>
+        </div>
+
+        <div class="field full">
+          <label>
+            <input id="consent" name="consent" type="checkbox" required aria-describedby="consentError">
+            Autorizo el contacto para gestionar mi pedido o reserva
+            <span class="required" aria-hidden="true">*</span>
+          </label>
+          <span class="field-error" id="consentError">Debes autorizar el contacto.</span>
+        </div>
+      </div>
+
+      <p class="hint" id="privacyNote">Tus datos se utilizarán solamente para atender esta solicitud.</p>
+      <button class="btn btn-primary" type="submit">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+        Enviar solicitud
+      </button>
+    </form>
+  </div>
+</section>
+
+<section class="section-alt" id="preguntas" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <p>Información clara para disfrutar tu pedido con tranquilidad.</p>
+    </div>
+
+    <div class="accordion">
+      <article class="accordion-item">
+        <h3>
+          <button class="accordion-trigger" id="faqTrigger1" type="button"
+                  aria-expanded="false" aria-controls="faqPanel1">
+            ¿Tienen opciones vegetarianas?
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+          </button>
+        </h3>
+        <div class="accordion-panel" id="faqPanel1" role="region" aria-labelledby="faqTrigger1" hidden>
+          Sí. La pizza Huerta Mediterránea es vegetariana y puedes solicitar ajustes de ingredientes al confirmar tu pedido.
+        </div>
+      </article>
+
+      <article class="accordion-item">
+        <h3>
+          <button class="accordion-trigger" id="faqTrigger2" type="button"
+                  aria-expanded="false" aria-controls="faqPanel2">
+            ¿Puedo informar alergias o restricciones alimentarias?
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+          </button>
+        </h3>
+        <div class="accordion-panel" id="faqPanel2" role="region" aria-labelledby="faqTrigger2" hidden>
+          Sí. Escríbelas en el formulario o comunícalas telefónicamente antes de confirmar el pedido.
+        </div>
+      </article>
+
+      <article class="accordion-item">
+        <h3>
+          <button class="accordion-trigger" id="faqTrigger3" type="button"
+                  aria-expanded="false" aria-controls="faqPanel3">
+            ¿El restaurante cuenta con acceso inclusivo?
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+          </button>
+        </h3>
+        <div class="accordion-panel" id="faqPanel3" role="region" aria-labelledby="faqTrigger3" hidden>
+          El concepto de esta plantilla contempla acceso sin barreras, mesas adaptables e información accesible. Verifica estos servicios con el local real antes de publicar.
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="accesibilidad" aria-labelledby="a11y-title">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="a11y-title">Compromiso de accesibilidad digital</h2>
+      <p>Nuestra web está diseñada para ser usable y disfrutable por todas las personas, independientemente de sus capacidades.</p>
+    </div>
+    
+    <div class="accessibility-statement">
+      <div class="a11y-intro">
+        <p>
+          Esta página utiliza estándares modernos de accesibilidad web (WCAG 2.1 Nivel AA) para asegurar una navegación fluida, robusta e independiente de herramientas externas. El panel de ajustes visuales es complementario: el sitio conserva su estructura accesible aun cuando las herramientas adicionales no se activen.
+        </p>
+      </div>
+
+      <div class="a11y-features-grid">
+        <div class="a11y-feature-card">
+          <h3>
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-accessibility"></use></svg>
+            HTML Semántico y ARIA
+          </h3>
+          <p>Estructura limpia usando etiquetas de HTML5 (nav, header, main, section, footer) que facilitan la lectura en lectores de pantalla (como NVDA o JAWS), además de roles y estados ARIA que anuncian cambios en vivo.</p>
+        </div>
+
+        <div class="a11y-feature-card">
+          <h3>
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-check"></use></svg>
+            Navegación por Teclado
+          </h3>
+          <p>Todo el sitio es navegable usando la tecla <kbd>Tab</kbd>, con enlaces de salto ocultos al inicio y un foco visible altamente destacado para evitar desorientación visual.</p>
+        </div>
+
+        <div class="a11y-feature-card">
+          <h3>
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-leaf"></use></svg>
+            Contraste y Adaptabilidad
+          </h3>
+          <p>Los colores por defecto cumplen con una relación de contraste superior a 8.5:1. Mediante el panel flotante, puedes activar temas de Alto Contraste, Modo Oscuro, o cambiar el tamaño de la tipografía de forma proporcional.</p>
+        </div>
+
+        <div class="a11y-feature-card">
+          <h3>
+            <svg class="svg-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+            Formularios Anunciables
+          </h3>
+          <p>El formulario de pedidos valida la información en tiempo real, vinculando las descripciones de los errores con los campos interactivos correspondientes de forma que los lectores de voz los puedan anunciar.</p>
+        </div>
+      </div>
+
+      <div class="a11y-footer-action">
+        <p><strong>¿Has encontrado una dificultad?</strong> Nos comprometemos a ofrecerte alternativas y corregirla de inmediato.</p>
+        <a href="mailto:accesibilidad@Hornovivo.example?subject=Reporte%20de%20accesibilidad" class="btn btn-secondary">
+          Reportar una barrera de accesibilidad
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
     </main>
 
-    <div data-include="components/footer.html"></div>
+<footer aria-label="Pie de página">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-pizza"></use></svg>
+        <span>Horno Vivo</span>
+      </div>
+      <p>Pizza artesanal, ingredientes frescos y experiencias accesibles para compartir.</p>
+    </div>
+    <div>
+      <strong>Contacto</strong>
+      <ul>
+        <li><a href="https://wa.me/573125108134" target="_blank" rel="noopener" aria-label="WhatsApp de Horno Vivo, 312 510 8134">312 510 8134</a></li>
+        <li><a href="mailto:pedidos@Hornovivo.example">pedidos@Hornovivo.example</a></li>
+        <li>Cúcuta, Colombia</li>
+      </ul>
+    </div>
+    <div>
+      <strong>Explora</strong>
+      <ul>
+        <li><a href="#menu">Carta</a></li>
+        <li><a href="#pedido">Pedidos y reservas</a></li>
+        <li><a href="#accesibilidad">Accesibilidad</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
   </div>
 
-  <div data-include="components/a11y-panel.html"></div>
-  <div class="reading-guide" id="readingGuide" aria-hidden="true"></div>
-  <div data-include="components/modals.html"></div>
+<button class="a11y-launcher" id="a11yLauncher" type="button"
+        aria-expanded="false" aria-controls="a11yPanel"
+        aria-label="Abrir herramientas de accesibilidad">
+  <svg class="svg-icon" aria-hidden="true"><use href="#icon-accessibility"></use></svg>
+</button>
 
-  <script>
-    async function loadComponents() {
-      const includes = document.querySelectorAll('[data-include]');
-      for (const el of includes) {
-        try {
-          const response = await fetch(el.getAttribute('data-include'));
-          if (response.ok) {
-            el.outerHTML = await response.text();
-          } else {
-            console.error('Error cargando componente:', el.getAttribute('data-include'));
-          }
-        } catch (error) {
-          console.error('Error de red al cargar:', error);
-        }
-      }
-            const script = document.createElement('script');
-      script.type = 'module';
-      script.src = 'js/app.js';
-      document.body.appendChild(script);
-    }
-    
-    loadComponents();
-  </script>
+<aside class="a11y-panel" id="a11yPanel" aria-labelledby="a11yPanelTitle" hidden>
+  <div class="a11y-header">
+    <h2 id="a11yPanelTitle">Accesibilidad</h2>
+    <button class="icon-button" id="closeA11y" type="button" aria-label="Cerrar herramientas">
+      <svg class="svg-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+    </button>
+  </div>
+  <p class="hint">Personaliza la visualización y asistencia de lectura.</p>
+
+  <div class="text-size-row" aria-label="Cambiar tamaño del texto">
+    <button id="fontDecrease" type="button" aria-label="Reducir tamaño del texto">A−</button>
+    <button id="fontReset" type="button" aria-label="Restablecer tamaño del texto">A</button>
+    <button id="fontIncrease" type="button" aria-label="Aumentar tamaño del texto">A+</button>
+  </div>
+
+  <div class="a11y-controls" aria-label="Opciones visuales">
+    <button type="button" data-toggle="high-contrast" aria-pressed="false">Alto contraste</button>
+    <button type="button" data-theme-toggle aria-pressed="false">Modo oscuro</button>
+    <button type="button" data-toggle="grayscale" aria-pressed="false">Escala de grises</button>
+    <button type="button" data-toggle="pause-motion" aria-pressed="false">Pausar animación</button>
+    <button type="button" data-toggle="focus-strong" aria-pressed="false">Foco destacado</button>
+    <button type="button" data-toggle="guide-enabled" aria-pressed="false">Guía de lectura</button>
+    <button type="button" data-toggle="readable-font" aria-pressed="false">Fuente legible</button>
+    <button type="button" data-toggle="wide-spacing" aria-pressed="false">Espaciado</button>
+    <button type="button" data-toggle="hide-images" aria-pressed="false">Ocultar imágenes</button>
+    <button type="button" data-toggle="big-cursor" aria-pressed="false">Cursor grande</button>
+    <button type="button" id="speakPage" aria-pressed="false">Leer contenido</button>
+    <button type="button" id="keyboardHelp" aria-pressed="false">Atajos</button>
+  </div>
+
+  <div class="profile-buttons" aria-label="Perfiles rápidos">
+    <button type="button" data-profile="cognitive">Perfil cognitivo: lectura clara</button>
+    <button type="button" data-profile="lowVision">Perfil baja visión: contraste y tamaño</button>
+    <button type="button" data-profile="motor">Perfil motriz: foco y cursor</button>
+  </div>
+
+  <button class="reset-button" id="resetAccessibility" type="button">Restablecer ajustes</button>
+</aside>
+
+<div class="reading-guide" id="readingGuide" aria-hidden="true"></div>
+
+
+  <div class="reading-guide" id="readingGuide" aria-hidden="true"></div>
+
+<dialog id="infoModal" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+  <div class="dialog-content">
+    <div class="dialog-head">
+      <div>
+        <h2 id="modalTitle">Accesibilidad en Horno Vivo</h2>
+        <p id="modalDescription">
+          Recorre la página con teclado, amplía el texto, activa alto contraste,
+          modo oscuro o guía de lectura desde el botón de accesibilidad.
+        </p>
+      </div>
+      <button class="icon-button" id="closeInfoModal" type="button" aria-label="Cerrar ventana">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+    </div>
+    <p>
+      Teclas útiles: <kbd>Tab</kbd> para avanzar, <kbd>Mayús + Tab</kbd> para retroceder,
+      <kbd>Esc</kbd> para cerrar y <kbd>Alt + A</kbd> para abrir herramientas de accesibilidad.
+    </p>
+    <button class="btn btn-primary" id="modalAccept" type="button">Entendido</button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+<div class="sr-only" id="liveRegion" aria-live="polite" aria-atomic="true"></div>
+
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
