@@ -7,8 +7,9 @@
     "build": "node build.js",
     "dev": "node build.js --watch"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "docx": "^9.7.1"
+  },
   "author": "",
   "license": "ISC"
 }
