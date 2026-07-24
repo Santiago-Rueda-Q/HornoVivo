@@ -3,7 +3,16 @@ const path = require('path');
 
 const TEMPLATE_FILE = path.join(__dirname, 'template.html');
 const COMPONENTS_DIR = path.join(__dirname, 'components');
-const OUTPUT_FILE = path.join(__dirname, 'index.html');
+const DIST_DIR = path.join(__dirname, 'dist');
+const OUTPUT_FILE = path.join(DIST_DIR, 'index.html');
+
+function minifyHTML(html) {
+  return html
+    .replace(/\s+/g, ' ')
+    .replace(/>\s+</g, '><')
+    .replace(/<!--(?!\s*\{\{).*?-->/g, '')
+    .trim();
+}
 
 function compile() {
   console.log('Compilando componentes...');
@@ -28,6 +37,13 @@ function compile() {
         return fullMatch;
       }
     });
+    
+    result = minifyHTML(result);
+    
+    // Crear directorio dist si no existe
+    if (!fs.existsSync(DIST_DIR)) {
+      fs.mkdirSync(DIST_DIR);
+    }
     
     fs.writeFileSync(OUTPUT_FILE, result, 'utf8');
     console.log(`¡Compilación exitosa! index.html generado en: ${OUTPUT_FILE}\n`);
